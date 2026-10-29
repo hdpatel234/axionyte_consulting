@@ -16,18 +16,10 @@ export default function ThemeToggle({
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("axionyte-theme") as
-      | "light"
-      | "dark"
-      | null;
-    const currentTheme =
-      savedTheme ||
-      (document.documentElement.getAttribute("data-theme") as
-        | "light"
-        | "dark") ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light");
+    const savedTheme = localStorage.getItem("axionyte-theme");
+    const htmlTheme = document.documentElement.getAttribute("data-theme");
+    const currentTheme: "light" | "dark" =
+      savedTheme === "dark" || htmlTheme === "dark" ? "dark" : "light";
 
     setTheme(currentTheme);
     document.documentElement.setAttribute("data-theme", currentTheme);
