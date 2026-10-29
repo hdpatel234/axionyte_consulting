@@ -1,0 +1,162 @@
+/* Netzon Next.js Global Styles */
+
+:root {
+  --primary-color: #00f0ff;
+  --text-color: #9ea4b5;
+  --white-color: #ffffff;
+  --dark-color: #050914;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sora), 'Sora', sans-serif;
+  background-color: #030712;
+  color: #9ea4b5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Preloader Transition */
+.preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  pointer-events: none;
+}
+
+/* Header Sticky Active State */
+header.main-header .header-sticky.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(3, 7, 18, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.35s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Ticker Marquee Animation */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.scrolling-ticker-box {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.scrolling-ticker-box .scrolling-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation: ticker 25s linear infinite;
+}
+
+.scrolling-ticker-box:hover .scrolling-content {
+  animation-play-state: paused;
+}
+
+/* Company supports ticker */
+.company-supports-ticker {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.company-supports-ticker .company-supports-slider-box {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation: ticker 30s linear infinite;
+}
+
+/* Lightbox Modal */
+.netzon-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.netzon-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.netzon-lightbox-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.netzon-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Smooth Video Embed */
+.video-responsive-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 900px;
+  width: 90vw;
+}
+
+.video-responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Image Reveal Animation Override */
+.reveal,
+.reveal img,
+figure.image-anime.reveal,
+figure.image-anime.reveal img {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
