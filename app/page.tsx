@@ -54,7 +54,7 @@ export default function HomePage() {
                       </Link>
                     </div>
                     <div className="hero-btn ms-sm-3 mt-2 mt-sm-0">
-                      <Link href="/services" className="btn-default btn-highlighted">
+                      <Link href="/services" className="btn-default btn-hero-secondary">
                         Explore Services
                       </Link>
                     </div>
@@ -103,12 +103,17 @@ export default function HomePage() {
                   <div
                     className="hero-item box-3 wow fadeInUp"
                     data-wow-delay="0.4s"
+                    style={{
+                      background: "#ffffff",
+                      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.06)",
+                      border: "1px solid rgba(0, 0, 0, 0.06)",
+                    }}
                   >
                     <div className="hero-item-content">
-                      <h3 style={{ color: "#ffffff", fontSize: "20px", marginBottom: "8px" }}>
+                      <h3 style={{ color: "#0e1b2c", fontSize: "20px", marginBottom: "8px", fontWeight: 700 }}>
                         Trusted Expertise
                       </h3>
-                      <p style={{ color: "#9ea4b5", fontSize: "14px" }}>
+                      <p style={{ color: "#475569", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
                         Collaborate with senior practitioners to evaluate risk, fortify architecture, and automate workflows.
                       </p>
                     </div>
