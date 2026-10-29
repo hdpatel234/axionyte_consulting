@@ -160,3 +160,42 @@ figure.image-anime.reveal img {
   opacity: 1 !important;
 }
 
+/* Magic Cursor & data-cursor="-opaque" lens effect */
+.cb-cursor {
+  color: #101726;
+  pointer-events: none !important;
+}
+
+.cb-cursor:before {
+  background: currentColor;
+}
+
+.cb-cursor.-opaque {
+  mix-blend-mode: exclusion !important;
+}
+
+.cb-cursor.-opaque:before {
+  background: #ffffff !important;
+  transform: scale(1.35) !important;
+}
+
+.cb-cursor.-opaque.-active:before {
+  transform: scale(1.2) !important;
+}
+
+.cb-cursor.-pointer:before {
+  transform: scale(0) !important;
+}
+
+.cb-cursor.-text:before {
+  background: rgba(10, 15, 24, 0.85) !important;
+  backdrop-filter: blur(8px);
+  transform: scale(1.7) !important;
+}
+
+.cb-cursor.-text .cb-cursor-text {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+
