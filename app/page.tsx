@@ -393,42 +393,62 @@ export default function HomePage() {
 
           <div className="row">
             <div className="col-lg-3 col-md-6 mb-4">
-              <div className="feature-item wow fadeInUp" data-wow-delay="0.2s">
-                <div className="feature-icon mb-3">
+              <div className="core-feature-card wow fadeInUp" data-wow-delay="0.15s">
+                <div className="feature-icon-wrapper">
                   <img src="/images/icon-how-it-work-1.svg" alt="Vulnerability Discovery" />
                 </div>
                 <h3>Vulnerability Discovery</h3>
                 <p>Systematic identification of security blind spots across cloud and on-premise environments.</p>
+                <div className="feature-card-footer">
+                  <Link href="/services" className="feature-link">
+                    Explore Advisory &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="col-lg-3 col-md-6 mb-4">
-              <div className="feature-item wow fadeInUp" data-wow-delay="0.3s">
-                <div className="feature-icon mb-3">
+              <div className="core-feature-card wow fadeInUp" data-wow-delay="0.25s">
+                <div className="feature-icon-wrapper">
                   <img src="/images/icon-how-it-work-2.svg" alt="Regulatory Compliance" />
                 </div>
                 <h3>Regulatory Alignment</h3>
                 <p>Aligning data governance with international cybersecurity and privacy standards.</p>
+                <div className="feature-card-footer">
+                  <Link href="/services" className="feature-link">
+                    Explore Advisory &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="col-lg-3 col-md-6 mb-4">
-              <div className="feature-item wow fadeInUp" data-wow-delay="0.4s">
-                <div className="feature-icon mb-3">
+              <div className="core-feature-card wow fadeInUp" data-wow-delay="0.35s">
+                <div className="feature-icon-wrapper">
                   <img src="/images/icon-how-it-work-3.svg" alt="AI Feasibility" />
                 </div>
-                <h3>AI Feasibility & Safety</h3>
+                <h3>AI Feasibility &amp; Safety</h3>
                 <p>Assessing AI readiness, mitigating algorithm risks, and designing secure automation pipelines.</p>
+                <div className="feature-card-footer">
+                  <Link href="/solutions" className="feature-link">
+                    Explore Solutions &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="col-lg-3 col-md-6 mb-4">
-              <div className="feature-item wow fadeInUp" data-wow-delay="0.5s">
-                <div className="feature-icon mb-3">
+              <div className="core-feature-card wow fadeInUp" data-wow-delay="0.45s">
+                <div className="feature-icon-wrapper">
                   <img src="/images/icon-how-it-work-4.svg" alt="Incident Preparedness" />
                 </div>
                 <h3>Incident Preparedness</h3>
                 <p>Establishing clear response protocols to contain threats and maintain business continuity.</p>
+                <div className="feature-card-footer">
+                  <Link href="/services" className="feature-link">
+                    Explore Advisory &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
