@@ -48,6 +48,7 @@ export const CORE_SERVICES = [
       "Strategic cybersecurity advisory services designed to fortify business architecture, safeguard digital assets, and align security posture with business objectives.",
     icon: "/images/icon-service-item-1.svg",
     bgIcon: "/images/icon-service-item-1-bg.svg",
+    image: "/images/case-study-image-1.jpg",
     link: "/services",
   },
   {
@@ -57,6 +58,7 @@ export const CORE_SERVICES = [
       "Comprehensive infrastructure, network, and application vulnerability assessments identifying vulnerabilities before adversaries can exploit them.",
     icon: "/images/icon-service-item-2.svg",
     bgIcon: "/images/icon-service-item-2-bg.svg",
+    image: "/images/case-study-image-2.jpg",
     link: "/services",
   },
   {
@@ -66,6 +68,7 @@ export const CORE_SERVICES = [
       "Guidance to navigate regulatory frameworks, establish robust governance programs, and mitigate operational, financial, and reputational risks.",
     icon: "/images/icon-service-item-3.svg",
     bgIcon: "/images/icon-service-item-3-bg.svg",
+    image: "/images/case-study-image-3.jpg",
     link: "/services",
   },
   {
@@ -75,6 +78,7 @@ export const CORE_SERVICES = [
       "Advisory on ethical, secure, and impactful artificial intelligence adoption to transform enterprise workflows and drive competitive advantages.",
     icon: "/images/icon-service-item-4.svg",
     bgIcon: "/images/icon-service-item-4-bg.svg",
+    image: "/images/case-study-image-4.jpg",
     link: "/services",
   },
   {
@@ -84,6 +88,7 @@ export const CORE_SERVICES = [
       "Design and implementation of intelligent process automations that enhance operational velocity, eliminate bottlenecks, and ensure data integrity.",
     icon: "/images/icon-service-item-5.svg",
     bgIcon: "/images/icon-service-item-5-bg.svg",
+    image: "/images/case-study-image-5.jpg",
     link: "/services",
   },
   {
@@ -93,6 +98,7 @@ export const CORE_SERVICES = [
       "Roadmapping resilient security paradigms for cloud migrations, hybrid ecosystems, and next-generation enterprise digital transformations.",
     icon: "/images/icon-service-item-6.svg",
     bgIcon: "/images/icon-service-item-6-bg.svg",
+    image: "/images/case-study-image-6.jpg",
     link: "/services",
   },
 ];

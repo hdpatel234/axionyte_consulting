@@ -211,29 +211,43 @@ export default function HomePage() {
 
           <div className="row">
             {CORE_SERVICES.map((service, idx) => (
-              <div
-                className="col-lg-4 col-md-6 mb-4"
-                key={service.id}
-              >
+              <div className="col-lg-4 col-md-6 mb-4" key={service.id}>
                 <div
-                  className="service-item wow fadeInUp"
+                  className="service-card-modern wow fadeInUp"
                   data-wow-delay={`${0.15 * (idx + 1)}s`}
                 >
-                  <div className="service-header">
-                    <div className="service-icon">
+                  <div className="service-card-image">
+                    <Link href="/services">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        loading="lazy"
+                      />
+                    </Link>
+                    <div className="service-card-icon-badge">
                       <img src={service.icon} alt={service.title} />
                     </div>
-                    <div className="service-btn">
-                      <Link href="/services">
-                        <i className="fa-solid fa-arrow-right"></i>
+                  </div>
+
+                  <div className="service-card-content">
+                    <div className="service-card-header">
+                      <h3 className="service-card-title">
+                        <Link href="/services">{service.title}</Link>
+                      </h3>
+                      <Link
+                        href="/services"
+                        className="service-card-arrow-btn"
+                        aria-label={`Read more about ${service.title}`}
+                      >
+                        <img src="/images/arrow-primary.svg" alt="" />
                       </Link>
                     </div>
-                  </div>
-                  <div className="service-body">
-                    <h3>
-                      <Link href="/services">{service.title}</Link>
-                    </h3>
-                    <p>{service.description}</p>
+                    <p className="service-card-desc">{service.description}</p>
+                    <div className="service-card-footer">
+                      <Link href="/contact" className="service-card-action">
+                        Consult on this Service &rarr;
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

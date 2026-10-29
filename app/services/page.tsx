@@ -51,35 +51,38 @@ export default function ServicesPage() {
             {CORE_SERVICES.map((service, idx) => (
               <div className="col-lg-4 col-md-6 mb-4" key={service.id}>
                 <div
-                  className="service-item wow fadeInUp"
+                  className="service-card-modern wow fadeInUp"
                   data-wow-delay={`${0.15 * (idx + 1)}s`}
-                  style={{ height: "100%" }}
                 >
-                  <div className="service-header">
-                    <div className="service-icon">
+                  <div className="service-card-image">
+                    <Link href="/contact">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        loading="lazy"
+                      />
+                    </Link>
+                    <div className="service-card-icon-badge">
                       <img src={service.icon} alt={service.title} />
                     </div>
-                    <div className="service-btn">
-                      <Link href="/contact">
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </Link>
-                    </div>
                   </div>
-                  <div className="service-body">
-                    <h3>
-                      <Link href="/contact">{service.title}</Link>
-                    </h3>
-                    <p>{service.description}</p>
-                    <div className="mt-3">
+
+                  <div className="service-card-content">
+                    <div className="service-card-header">
+                      <h3 className="service-card-title">
+                        <Link href="/contact">{service.title}</Link>
+                      </h3>
                       <Link
                         href="/contact"
-                        style={{
-                          color: "#00f0ff",
-                          fontSize: "14px",
-                          fontWeight: 600,
-                          textDecoration: "none",
-                        }}
+                        className="service-card-arrow-btn"
+                        aria-label={`Inquire about ${service.title}`}
                       >
+                        <img src="/images/arrow-primary.svg" alt="" />
+                      </Link>
+                    </div>
+                    <p className="service-card-desc">{service.description}</p>
+                    <div className="service-card-footer">
+                      <Link href="/contact" className="service-card-action">
                         Request Service Details &rarr;
                       </Link>
                     </div>
