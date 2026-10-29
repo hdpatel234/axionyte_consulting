@@ -1,21 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
+import { COMPANY } from "@/lib/company-data";
 
 export default function Footer() {
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleNewsletter = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newsletterEmail) {
-      setSubscribed(true);
-      setTimeout(() => setSubscribed(false), 4000);
-      setNewsletterEmail("");
-    }
-  };
-
   return (
     <footer className="main-footer">
       {/* Footer Scrolling Ticker Box Start */}
@@ -28,31 +14,31 @@ export default function Footer() {
                 <div className="scrolling-ticker-box">
                   <div className="scrolling-content">
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Talk to Our Expert: {COMPANY.phone}
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Cybersecurity & AI Services
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Talk to Our Expert: {COMPANY.phone}
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Cybersecurity & AI Services
                     </span>
                   </div>
 
                   <div className="scrolling-content">
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Talk to Our Expert: {COMPANY.phone}
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Cybersecurity & AI Services
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Talk to Our Expert: {COMPANY.phone}
                     </span>
                     <span>
-                      <img src="/images/icon-asterisk.svg" alt="" /> Let&apos;s Work Together
+                      <img src="/images/icon-asterisk.svg" alt="" /> Cybersecurity & AI Services
                     </span>
                   </div>
                 </div>
@@ -72,75 +58,104 @@ export default function Footer() {
 
       <div className="container">
         <div className="row">
-          <div className="col-xl-3 col-md-6">
+          <div className="col-xl-4 col-md-6 mb-4">
             {/* About Footer */}
             <div className="about-footer">
-              <div className="footer-logo">
-                <Link href="/">
-                  <img src="/images/footer-logo.svg" alt="Netzon" />
+              <div className="footer-logo mb-3">
+                <Link
+                  href="/"
+                  style={{
+                    display: "inline-block",
+                    background: "#ffffff",
+                    padding: "6px 14px",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <img
+                    src="/images/axionyte-logo.png"
+                    alt={COMPANY.name}
+                    style={{ height: "42px", width: "auto" }}
+                  />
                 </Link>
               </div>
               <div className="about-footer-content">
                 <p>
-                  Secure your cloud environments & ensure safe migration with
-                  compliance-ready.
+                  {COMPANY.name} delivers strategic Cybersecurity and AI Services,
+                  helping forward-thinking organizations build robust security postures
+                  and adopt intelligent enterprise technologies.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="col-xl-3 col-md-6">
-            {/* Footer Location Link */}
-            <div className="footer-location footer-links">
-              <h3>Our Location</h3>
-              <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
-            </div>
-          </div>
-
-          <div className="col-xl-3 col-md-6">
-            {/* Footer Contact */}
-            <div className="footer-contact footer-links">
-              <h3>Contact Information</h3>
+          <div className="col-xl-2 col-md-6 mb-4">
+            {/* Quick Links */}
+            <div className="footer-links">
+              <h3>Quick Links</h3>
               <ul>
                 <li>
-                  <a href="tel:123456789">+(123) 456-789</a>
+                  <Link href="/company">Company</Link>
                 </li>
                 <li>
-                  <a href="mailto:info@domainname.com">info@domainname.com</a>
+                  <Link href="/solutions">Solutions</Link>
+                </li>
+                <li>
+                  <Link href="/services">Services</Link>
+                </li>
+                <li>
+                  <Link href="/partnerships">Partnerships</Link>
+                </li>
+                <li>
+                  <Link href="/blogs">Blogs</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="col-xl-3 col-md-6">
-            {/* Footer Newsletter Form */}
-            <div className="footer-newsletter-form footer-links">
-              <h3>Subscribe To Newsletter</h3>
-              <p>
-                Stay informed with the latest cybersecurity news & expert tips.
+          <div className="col-xl-3 col-md-6 mb-4">
+            {/* Contact Information */}
+            <div className="footer-contact footer-links">
+              <h3>Contact Us</h3>
+              <ul>
+                <li style={{ color: "#ffffff", marginBottom: "8px" }}>
+                  <strong>{COMPANY.owner}</strong> — {COMPANY.role}
+                </li>
+                <li>
+                  <a href={COMPANY.phoneLink}>
+                    <i className="fa-solid fa-phone me-2" style={{ color: "#00f0ff" }}></i>
+                    {COMPANY.phone}
+                  </a>
+                </li>
+                <li style={{ marginTop: "12px" }}>
+                  <Link
+                    href="/contact"
+                    className="btn-default"
+                    style={{
+                      padding: "8px 18px",
+                      fontSize: "13px",
+                      display: "inline-block",
+                    }}
+                  >
+                    Schedule Consultation
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="col-xl-3 col-md-6 mb-4">
+            {/* Office Location */}
+            <div className="footer-location footer-links">
+              <h3>Office Address</h3>
+              <p style={{ lineHeight: "1.7" }}>
+                {COMPANY.address.suite},<br />
+                {COMPANY.address.street},<br />
+                {COMPANY.address.cityStateZip},<br />
+                {COMPANY.address.country}
               </p>
-              <form id="newslettersForm" onSubmit={handleNewsletter}>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="mail"
-                    className="form-control"
-                    id="mail"
-                    placeholder="Email Address *"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    required
-                  />
-                  <button type="submit" className="newsletter-btn">
-                    Subscribe
-                  </button>
-                </div>
-                {subscribed && (
-                  <p style={{ color: "#00f0ff", marginTop: "8px", fontSize: "14px" }}>
-                    Thank you for subscribing!
-                  </p>
-                )}
-              </form>
             </div>
           </div>
         </div>
@@ -153,25 +168,19 @@ export default function Footer() {
             <div className="col-lg-12">
               <div className="footer-copyright-box">
                 <div className="footer-copyright-text">
-                  <p>Copyright © 2025 All Rights Reserved.</p>
+                  <p>Copyright © 2026 {COMPANY.name}. All Rights Reserved.</p>
                 </div>
 
                 <div className="footer-menu">
                   <ul>
                     <li>
-                      <Link href="/">Home</Link>
+                      <Link href="/privacy-policy">Privacy Policy</Link>
                     </li>
                     <li>
-                      <Link href="/about">About Us</Link>
+                      <Link href="/terms-and-conditions">Terms & Conditions</Link>
                     </li>
                     <li>
-                      <Link href="/services">Services</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Blogs</Link>
-                    </li>
-                    <li>
-                      <Link href="/contact">Contact Us</Link>
+                      <Link href="/cookie-policy">Cookie Policy</Link>
                     </li>
                   </ul>
                 </div>

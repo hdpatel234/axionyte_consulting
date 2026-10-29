@@ -1,20 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { CORE_SERVICES } from "@/lib/company-data";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    fname: "",
-    lname: "",
+    fullName: "",
     email: "",
     phone: "",
+    companyName: "",
+    serviceInterested: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -24,8 +26,8 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fname || !formData.email || !formData.phone) {
-      setErrorMsg("Please fill in all required fields.");
+    if (!formData.fullName.trim() || !formData.email.trim() || !formData.phone.trim()) {
+      setErrorMsg("Please fill in your name, email, and phone number.");
       setStatus("error");
       return;
     }
@@ -34,42 +36,28 @@ export default function ContactForm() {
     setTimeout(() => {
       setStatus("success");
       setFormData({
-        fname: "",
-        lname: "",
+        fullName: "",
         email: "",
         phone: "",
+        companyName: "",
+        serviceInterested: "",
         message: "",
       });
-      setTimeout(() => setStatus("idle"), 6000);
-    }, 1000);
+      setTimeout(() => setStatus("idle"), 7000);
+    }, 800);
   };
 
   return (
     <form id="contactForm" onSubmit={handleSubmit} className="wow fadeInUp" data-wow-delay="0.2s">
       <div className="row">
         <div className="form-group col-md-6 mb-4">
-          <label className="form-label">First Name *</label>
+          <label className="form-label">Full Name *</label>
           <input
             type="text"
-            name="fname"
+            name="fullName"
             className="form-control"
-            id="fname"
-            placeholder="Your First Name"
-            value={formData.fname}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="form-group col-md-6 mb-4">
-          <label className="form-label">Last Name *</label>
-          <input
-            type="text"
-            name="lname"
-            className="form-control"
-            id="lname"
-            placeholder="Your Last Name"
-            value={formData.lname}
+            placeholder="Your Full Name"
+            value={formData.fullName}
             onChange={handleChange}
             required
           />
@@ -81,8 +69,7 @@ export default function ContactForm() {
             type="email"
             name="email"
             className="form-control"
-            id="email"
-            placeholder="Your Email Address"
+            placeholder="name@company.com"
             value={formData.email}
             onChange={handleChange}
             required
@@ -92,15 +79,45 @@ export default function ContactForm() {
         <div className="form-group col-md-6 mb-4">
           <label className="form-label">Phone Number *</label>
           <input
-            type="text"
+            type="tel"
             name="phone"
             className="form-control"
-            id="phone"
-            placeholder="Your Phone Number"
+            placeholder="+91 00000 00000"
             value={formData.phone}
             onChange={handleChange}
             required
           />
+        </div>
+
+        <div className="form-group col-md-6 mb-4">
+          <label className="form-label">Company Name (Optional)</label>
+          <input
+            type="text"
+            name="companyName"
+            className="form-control"
+            placeholder="Your Organization"
+            value={formData.companyName}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group col-md-12 mb-4">
+          <label className="form-label">Service Interested In (Optional)</label>
+          <select
+            name="serviceInterested"
+            className="form-control"
+            value={formData.serviceInterested}
+            onChange={handleChange}
+            style={{ backgroundColor: "#050914", color: "#9ea4b5", border: "1px solid #1f2937" }}
+          >
+            <option value="">Select a Service or Topic</option>
+            {CORE_SERVICES.map((s) => (
+              <option key={s.id} value={s.title}>
+                {s.title}
+              </option>
+            ))}
+            <option value="General Inquiry">General Consultation Inquiry</option>
+          </select>
         </div>
 
         <div className="form-group col-md-12 mb-5">
@@ -108,9 +125,8 @@ export default function ContactForm() {
           <textarea
             name="message"
             className="form-control"
-            id="message"
             rows={5}
-            placeholder="Any Message..."
+            placeholder="Briefly describe your requirements or inquiry..."
             value={formData.message}
             onChange={handleChange}
           ></textarea>
@@ -124,28 +140,27 @@ export default function ContactForm() {
               disabled={status === "submitting"}
             >
               <span>
-                {status === "submitting" ? "Sending..." : "Submit Form"}
+                {status === "submitting" ? "Sending Request..." : "Submit Consultation Request"}
               </span>
             </button>
             {status === "success" && (
               <div
-                className="h3"
+                className="h4 mt-3"
                 style={{
                   color: "#00f0ff",
-                  marginTop: "16px",
-                  fontSize: "18px",
+                  fontSize: "16px",
+                  lineHeight: "1.5",
                 }}
               >
-                Thank you! Your message has been sent successfully.
+                Thank you! Your inquiry has been received. Our team will contact you shortly.
               </div>
             )}
             {status === "error" && (
               <div
-                className="h3"
+                className="h4 mt-3"
                 style={{
                   color: "#ff4d4f",
-                  marginTop: "16px",
-                  fontSize: "18px",
+                  fontSize: "15px",
                 }}
               >
                 {errorMsg}

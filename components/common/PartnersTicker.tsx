@@ -1,31 +1,68 @@
 import React from "react";
+import { INDUSTRIES_SERVED } from "@/lib/company-data";
 
 export default function PartnersTicker() {
-  const logos = [
-    "/images/company-supports-logo-1.svg",
-    "/images/company-supports-logo-2.svg",
-    "/images/company-supports-logo-3.svg",
-    "/images/company-supports-logo-4.svg",
-    "/images/company-supports-logo-1.svg",
-    "/images/company-supports-logo-2.svg",
-    "/images/company-supports-logo-3.svg",
-    "/images/company-supports-logo-4.svg",
-  ];
-
   return (
     <div className="our-scrolling-ticker">
       <div className="scrolling-ticker-box">
         <div className="scrolling-content">
-          {logos.map((logo, idx) => (
-            <span key={`ticker-1-${idx}`}>
-              <img src={logo} alt={`Partner ${idx + 1}`} />
+          {INDUSTRIES_SERVED.map((industry, idx) => (
+            <span
+              key={`industry-1-${idx}`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "12px",
+                margin: "0 24px",
+              }}
+            >
+              <img
+                src="/images/icon-asterisk.svg"
+                alt=""
+                style={{ width: "16px", height: "16px" }}
+              />
+              <span
+                style={{
+                  fontSize: "17px",
+                  fontWeight: 600,
+                  color: "#ffffff",
+                  letterSpacing: "0.5px",
+                  textTransform: "uppercase",
+                }}
+              >
+                {industry}
+              </span>
             </span>
           ))}
         </div>
+
         <div className="scrolling-content">
-          {logos.map((logo, idx) => (
-            <span key={`ticker-2-${idx}`}>
-              <img src={logo} alt={`Partner ${idx + 1}`} />
+          {INDUSTRIES_SERVED.map((industry, idx) => (
+            <span
+              key={`industry-2-${idx}`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "12px",
+                margin: "0 24px",
+              }}
+            >
+              <img
+                src="/images/icon-asterisk.svg"
+                alt=""
+                style={{ width: "16px", height: "16px" }}
+              />
+              <span
+                style={{
+                  fontSize: "17px",
+                  fontWeight: 600,
+                  color: "#ffffff",
+                  letterSpacing: "0.5px",
+                  textTransform: "uppercase",
+                }}
+              >
+                {industry}
+              </span>
             </span>
           ))}
         </div>

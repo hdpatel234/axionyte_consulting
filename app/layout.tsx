@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MagicCursor from "@/components/common/MagicCursor";
+import { COMPANY } from "@/lib/company-data";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -14,12 +15,75 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Netzon - Cyber Security Services Next.js Template",
-  description:
-    "Powerful, scalable & intelligent security solutions that adapt to new threats. Protecting your digital world.",
-  icons: {
-    icon: "/images/favicon.png",
+  metadataBase: new URL("https://axionyte-consulting.vercel.app"),
+  title: {
+    default: "AXIONYTE Consulting | Cybersecurity & AI Services",
+    template: "%s | AXIONYTE Consulting",
   },
+  description:
+    "AXIONYTE Consulting helps organizations strengthen digital security, adopt intelligent technologies, and build resilient business operations through cybersecurity and AI-focused solutions.",
+  keywords: [
+    "Cybersecurity Consulting",
+    "AI Services",
+    "Security Assessment",
+    "Risk and Compliance Advisory",
+    "AI Automation",
+    "Digital Security Strategy",
+    "Ahmedabad Cybersecurity",
+  ],
+  authors: [{ name: COMPANY.owner }],
+  creator: COMPANY.name,
+  icons: {
+    icon: [
+      { url: "/images/favicon.png" },
+      { url: "/images/favicon-32x32.png", sizes: "32x32" },
+    ],
+    apple: "/images/axionyte-shield.png",
+  },
+  openGraph: {
+    title: "AXIONYTE Consulting | Cybersecurity & AI Services",
+    description:
+      "Empowering organizations with intelligent cybersecurity and AI consulting solutions for enterprise resilience.",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/axionyte-logo-original.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AXIONYTE Consulting - Cybersecurity · AI Services",
+      },
+    ],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: COMPANY.name,
+  image: "https://axionyte-consulting.vercel.app/images/axionyte-logo-original.jpg",
+  telephone: COMPANY.phone,
+  founder: {
+    "@type": "Person",
+    name: COMPANY.owner,
+    jobTitle: COMPANY.role,
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${COMPANY.address.suite}, ${COMPANY.address.street}`,
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    postalCode: "380015",
+    addressCountry: "IN",
+  },
+  description:
+    "AXIONYTE Consulting provides specialized cybersecurity assessments, strategic risk advisory, and AI automation solutions for enterprise organizations.",
+  knowsAbout: [
+    "Cybersecurity Consulting",
+    "Artificial Intelligence",
+    "Security Assessments",
+    "Risk & Compliance Advisory",
+  ],
 };
 
 export default function RootLayout({
@@ -38,6 +102,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/magnific-popup.css" />
         <link rel="stylesheet" href="/css/mousecursor.css" />
         <link href="/css/custom.css" rel="stylesheet" media="screen" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={sora.className}>
         <Header />
