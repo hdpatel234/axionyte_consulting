@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MagicCursor from "@/components/common/MagicCursor";
+import SmoothScroll from "@/components/common/SmoothScroll";
 import { COMPANY } from "@/lib/company-data";
 
 const sora = Sora({
@@ -121,6 +123,7 @@ export default function RootLayout({
         />
       </head>
       <body className={sora.className} suppressHydrationWarning>
+        <SmoothScroll />
         <Header />
         <main>{children}</main>
         <Footer />
