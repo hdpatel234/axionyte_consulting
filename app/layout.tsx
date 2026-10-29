@@ -92,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={sora.variable}>
+    <html lang="en" className={sora.variable} suppressHydrationWarning>
       <head>
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
         <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -107,7 +107,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={sora.className}>
+      <body className={sora.className} suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />
