@@ -1,0 +1,101 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+interface ThemeToggleProps {
+  className?: string;
+  showText?: boolean;
+}
+
+export default function ThemeToggle({
+  className = "",
+  showText = false,
+}: ThemeToggleProps) {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem("axionyte-theme") as
+      | "light"
+      | "dark"
+      | null;
+    const currentTheme =
+      savedTheme ||
+      (document.documentElement.getAttribute("data-theme") as
+        | "light"
+        | "dark") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+
+    setTheme(currentTheme);
+    document.documentElement.setAttribute("data-theme", currentTheme);
+
+    const handleThemeChange = (e: CustomEvent<"light" | "dark">) => {
+      setTheme(e.detail);
+    };
+
+    window.addEventListener(
+      "themechange" as any,
+      handleThemeChange as EventListener
+    );
+    return () => {
+      window.removeEventListener(
+        "themechange" as any,
+        handleThemeChange as EventListener
+      );
+    };
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("axionyte-theme", nextTheme);
+
+    window.dispatchEvent(
+      new CustomEvent("themechange", { detail: nextTheme })
+    );
+  };
+
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        className={`theme-toggle-btn ${className}`}
+        aria-label="Toggle theme"
+        disabled
+      >
+        <span className="theme-toggle-icon">
+          <i className="fa-solid fa-circle-half-stroke" />
+        </span>
+      </button>
+    );
+  }
+
+  const isDark = theme === "dark";
+
+  return (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      className={`theme-toggle-btn ${isDark ? "is-dark" : "is-light"} ${className}`}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      <span className="theme-toggle-icon">
+        {isDark ? (
+          <i className="fa-solid fa-sun" />
+        ) : (
+          <i className="fa-solid fa-moon" />
+        )}
+      </span>
+      {showText && (
+        <span className="theme-toggle-text">
+          {isDark ? "Light Mode" : "Dark Mode"}
+        </span>
+      )}
+    </button>
+  );
+}

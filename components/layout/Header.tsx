@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COMPANY, NAV_LINKS } from "@/lib/company-data";
+import ThemeToggle from "@/components/common/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -112,32 +113,36 @@ export default function Header() {
                   </ul>
                 </div>
 
-                {/* Header CTA Button */}
-                <div className="header-btn">
+                {/* Header CTA Button & Theme Toggle */}
+                <div className="header-btn" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <ThemeToggle />
                   <Link className="btn-default" href="/contact">
                     Talk with Our Expert
                   </Link>
                 </div>
               </div>
 
-              {/* Mobile Navbar Toggle */}
-              <div
-                className="navbar-toggle d-lg-none"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                style={{ cursor: "pointer" }}
-                aria-label="Toggle navigation menu"
-              >
+              {/* Mobile Right Controls: Theme Toggle & Hamburger */}
+              <div className="mobile-header-controls d-lg-none" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <ThemeToggle />
                 <div
-                  className={`slicknav_btn ${
-                    mobileMenuOpen ? "slicknav_open" : ""
-                  }`}
+                  className="navbar-toggle"
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  style={{ cursor: "pointer" }}
+                  aria-label="Toggle navigation menu"
                 >
-                  <span className="slicknav_menutxt"></span>
-                  <span className="slicknav_icon">
-                    <span className="slicknav_icon-bar"></span>
-                    <span className="slicknav_icon-bar"></span>
-                    <span className="slicknav_icon-bar"></span>
-                  </span>
+                  <div
+                    className={`slicknav_btn ${
+                      mobileMenuOpen ? "slicknav_open" : ""
+                    }`}
+                  >
+                    <span className="slicknav_menutxt"></span>
+                    <span className="slicknav_icon">
+                      <span className="slicknav_icon-bar"></span>
+                      <span className="slicknav_icon-bar"></span>
+                      <span className="slicknav_icon-bar"></span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,7 +164,10 @@ export default function Header() {
                       </Link>
                     </li>
                   ))}
-                  <li style={{ marginTop: "12px", padding: "0 10px" }}>
+                  <li style={{ marginTop: "14px", padding: "0 10px" }}>
+                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+                      <ThemeToggle showText={true} />
+                    </div>
                     <Link
                       href="/contact"
                       className="btn-default"

@@ -13,11 +13,12 @@ html {
 
 body {
   font-family: var(--font-sora), 'Sora', sans-serif;
-  background-color: #030712;
-  color: #9ea4b5;
+  background-color: var(--bg-color, #ffffff);
+  color: var(--text-color, #556070);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Preloader Transition */
@@ -36,10 +37,12 @@ header.main-header .header-sticky.active {
   right: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(3, 7, 18, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(14, 27, 44, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   animation: slideDown 0.35s ease-out;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 @keyframes slideDown {
@@ -495,6 +498,428 @@ figure.image-anime.reveal img {
   color: #1d4ed8 !important;
   gap: 10px !important;
 }
+
+/* ==========================================================================
+   Theme Toggle Button Styling
+   ========================================================================== */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(14, 27, 44, 0.12);
+  background: #f4f8ff;
+  color: #0f2453;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 0;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(15, 36, 83, 0.15);
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.theme-toggle-btn.is-dark {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f59e0b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.theme-toggle-btn.is-dark:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #fbbf24;
+  color: #fbbf24;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+}
+
+.theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: transform 0.4s ease;
+}
+
+.theme-toggle-btn:hover .theme-toggle-icon {
+  transform: rotate(25deg);
+}
+
+.theme-toggle-btn.is-dark:hover .theme-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.theme-toggle-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.responsive-menu .theme-toggle-btn {
+  width: auto;
+  min-width: 145px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 16px;
+}
+
+/* ==========================================================================
+   Comprehensive Dark Mode System (html[data-theme="dark"])
+   ========================================================================== */
+html[data-theme="dark"],
+[data-theme="dark"] {
+  --primary-color: #f8fafc;
+  --secondary-color: #0f172a;
+  --text-color: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-secondary-color: #1e3a8a;
+  --bg-color: #080d1a;
+  --white-color: #080d1a;
+  --black-color: #ffffff;
+  --divider-color: rgba(255, 255, 255, 0.08);
+  --dark-divider-color: rgba(255, 255, 255, 0.15);
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background-color: #080d1a !important;
+  color: #94a3b8 !important;
+}
+
+/* Headings in Dark Mode */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .section-title h2,
+html[data-theme="dark"] .section-title h3,
+html[data-theme="dark"] .text-anime-style-2 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .section-title h2 span,
+html[data-theme="dark"] .section-title h3 span,
+html[data-theme="dark"] .text-anime-style-2 span {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .section-title p {
+  color: #94a3b8 !important;
+}
+
+/* Header in Dark Mode */
+html[data-theme="dark"] header.main-header .header-sticky.active {
+  background: rgba(8, 13, 26, 0.94) !important;
+  backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .main-menu ul li a {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .main-menu ul li a:hover,
+html[data-theme="dark"] .main-menu ul li.active a {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .slicknav_menu {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .slicknav_nav a {
+  color: #e2e8f0 !important;
+}
+
+/* Secondary Hero Button in Dark Mode */
+html[data-theme="dark"] .btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .btn-hero-secondary:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* Hero Section in Dark Mode */
+html[data-theme="dark"] .hero-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .hero-item.box-1 {
+  background: #0d1527 !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+html[data-theme="dark"] .hero-item.box-2 {
+  background: #1e3a8a !important;
+}
+
+html[data-theme="dark"] .hero-item.box-3 {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .hero-item.box-3 .hero-client-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .hero-item.box-3 .hero-client-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .hero-item.box-4 {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important;
+}
+
+/* Service Card Modern in Dark Mode */
+html[data-theme="dark"] .service-card-modern {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .service-card-modern:hover {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65) !important;
+}
+
+html[data-theme="dark"] .service-card-title h3 a {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .service-card-title h3 a:hover {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .service-card-desc {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .service-card-footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .service-card-arrow-btn {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .service-card-arrow-btn img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Core Strengths Card in Dark Mode */
+html[data-theme="dark"] .core-feature-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .core-feature-card:hover {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65) !important;
+}
+
+html[data-theme="dark"] .core-feature-card h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .core-feature-card p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .core-feature-card .feature-link {
+  color: #38bdf8 !important;
+}
+
+/* How It Works in Dark Mode */
+html[data-theme="dark"] .how-work-item,
+html[data-theme="dark"] .how-it-work-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .how-work-item-content h3,
+html[data-theme="dark"] .how-it-work-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .how-work-item-content p,
+html[data-theme="dark"] .how-it-work-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .how-work-item-no h3,
+html[data-theme="dark"] .how-it-work-number h3 {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Section Background Resets */
+html[data-theme="dark"] .about-us,
+html[data-theme="dark"] .our-features,
+html[data-theme="dark"] .how-it-work,
+html[data-theme="dark"] .our-services,
+html[data-theme="dark"] .our-testimonials,
+html[data-theme="dark"] .our-faqs,
+html[data-theme="dark"] .our-blog,
+html[data-theme="dark"] .our-pricing {
+  background-color: transparent !important;
+}
+
+html[data-theme="dark"] .about-us-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .about-us-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .about-us-box {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .about-us-box-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .about-us-box-content p {
+  color: #94a3b8 !important;
+}
+
+/* Testimonial Items in Dark Mode */
+html[data-theme="dark"] .testimonial-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .testimonial-content p {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .author-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .author-content p {
+  color: #94a3b8 !important;
+}
+
+/* FAQs Accordion in Dark Mode */
+html[data-theme="dark"] .faq-accordion .accordion-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .faq-accordion .accordion-button {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .faq-accordion .accordion-button:not(.collapsed) {
+  color: #38bdf8 !important;
+  background: #131f37 !important;
+}
+
+html[data-theme="dark"] .faq-accordion .accordion-body p {
+  color: #94a3b8 !important;
+}
+
+/* Blog Items in Dark Mode */
+html[data-theme="dark"] .post-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .post-item-content h2 a,
+html[data-theme="dark"] .post-item-content h3 a {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .post-item-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .post-item-meta ul li {
+  color: #94a3b8 !important;
+}
+
+/* Contact & Forms in Dark Mode */
+html[data-theme="dark"] .contact-info-item {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .contact-info-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .contact-info-content p,
+html[data-theme="dark"] .contact-info-content a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .contact-form,
+html[data-theme="dark"] .form-box {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .form-group .form-control,
+html[data-theme="dark"] input.form-control,
+html[data-theme="dark"] textarea.form-control {
+  background: #080d1a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .form-group .form-control:focus,
+html[data-theme="dark"] input.form-control:focus,
+html[data-theme="dark"] textarea.form-control:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Footer in Dark Mode */
+html[data-theme="dark"] footer.main-footer {
+  background: #04060c !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .footer-copyright {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Tickers in Dark Mode */
+html[data-theme="dark"] .company-supports-slider-box span,
+html[data-theme="dark"] .scrolling-content span {
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Preloader in Dark Mode */
+html[data-theme="dark"] .preloader {
+  background-color: #080d1a !important;
+}
+
 
 
 
