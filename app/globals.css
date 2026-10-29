@@ -991,8 +991,34 @@ html[data-theme="dark"] .preloader {
   background-color: #080d1a !important;
 }
 
+/* Compact button modifier for .btn-default */
+.btn-default.btn-sm,
+.btn-sm.btn-default {
+  padding: 9px 38px 9px 18px !important;
+  font-size: 13px !important;
+  border-radius: 8px;
+}
 
+.btn-default.btn-sm::before,
+.btn-sm.btn-default::before {
+  right: 14px !important;
+  width: 11px !important;
+  height: 11px !important;
+}
 
+.btn-default.btn-sm.btn-highlighted,
+.btn-sm.btn-default.btn-highlighted {
+  padding: 8px 38px 8px 18px !important;
+}
 
+.btn-default.no-arrow::before {
+  display: none !important;
+}
 
+.btn-default.no-arrow {
+  padding-right: 24px !important;
+}
 
+.btn-default.btn-sm.no-arrow {
+  padding-right: 18px !important;
+}

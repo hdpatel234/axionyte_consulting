@@ -135,12 +135,7 @@ export default function Footer() {
                 <li style={{ marginTop: "12px" }}>
                   <Link
                     href="/contact"
-                    className="btn-default"
-                    style={{
-                      padding: "8px 18px",
-                      fontSize: "13px",
-                      display: "inline-block",
-                    }}
+                    className="btn-default btn-sm"
                   >
                     Schedule Consultation
                   </Link>

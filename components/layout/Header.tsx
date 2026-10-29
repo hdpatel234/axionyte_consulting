@@ -176,7 +176,7 @@ export default function Header() {
                       style={{
                         display: "block",
                         textAlign: "center",
-                        padding: "10px 16px",
+                        padding: "12px 46px 12px 24px",
                       }}
                     >
                       Talk with Our Expert

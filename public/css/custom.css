@@ -254,6 +254,37 @@ a:focus{
 	transform: translateY(-50%) rotate(45deg);
 }
 
+.btn-default.btn-sm,
+.btn-sm.btn-default{
+	padding: 9px 38px 9px 18px;
+	font-size: 13px;
+	border-radius: 8px;
+}
+
+.btn-default.btn-sm::before,
+.btn-sm.btn-default::before{
+	right: 14px;
+	width: 11px;
+	height: 11px;
+}
+
+.btn-default.btn-sm.btn-highlighted,
+.btn-sm.btn-default.btn-highlighted{
+	padding: 8px 38px 8px 18px;
+}
+
+.btn-default.no-arrow::before{
+	display: none;
+}
+
+.btn-default.no-arrow{
+	padding-right: 24px;
+}
+
+.btn-default.btn-sm.no-arrow{
+	padding-right: 18px;
+}
+
 .btn-default.btn-highlighted{
 	background: transparent;
 	border: 1px solid var(--white-color);

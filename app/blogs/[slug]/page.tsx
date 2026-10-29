@@ -193,7 +193,7 @@ export default async function BlogDetailPage({ params }: Props) {
                       </div>
                     </div>
                     <div className="col-lg-4 text-lg-end">
-                      <Link href="/blogs" className="btn-default btn-sm" style={{ padding: "8px 18px", fontSize: "14px" }}>
+                      <Link href="/blogs" className="btn-default btn-sm no-arrow">
                         &larr; Back to All Blogs
                       </Link>
                     </div>

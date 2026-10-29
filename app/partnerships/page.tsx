@@ -94,7 +94,7 @@ export default function PartnershipsPage() {
                     We work with selected security and AI technology OEMs. If your organization is an OEM seeking technical integration or consulting collaboration, connect with our leadership.
                   </p>
                   <div className="mt-4">
-                    <Link href="/contact" className="btn-default" style={{ padding: "8px 20px", fontSize: "14px" }}>
+                    <Link href="/contact" className="btn-default btn-sm">
                       OEM Inquiry
                     </Link>
                   </div>
@@ -153,7 +153,7 @@ export default function PartnershipsPage() {
                     {COMPANY.name} welcomes channel collaborations and strategic alliance inquiries. Partner with us to co-deliver cybersecurity audits and AI implementation frameworks.
                   </p>
                   <div className="mt-4">
-                    <Link href="/contact" className="btn-default" style={{ padding: "8px 20px", fontSize: "14px" }}>
+                    <Link href="/contact" className="btn-default btn-sm">
                       Partner With Us
                     </Link>
                   </div>
