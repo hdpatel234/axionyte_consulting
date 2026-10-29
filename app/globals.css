@@ -583,7 +583,7 @@ html[data-theme="dark"],
   --accent-color: #3b82f6;
   --accent-secondary-color: #1e3a8a;
   --bg-color: #080d1a;
-  --white-color: #080d1a;
+  --white-color: #ffffff;
   --black-color: #ffffff;
   --divider-color: rgba(255, 255, 255, 0.08);
   --dark-divider-color: rgba(255, 255, 255, 0.15);
@@ -902,10 +902,60 @@ html[data-theme="dark"] textarea.form-control:focus {
 html[data-theme="dark"] footer.main-footer {
   background: #04060c !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .about-footer-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .footer-links h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .footer-links p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .footer-links ul li {
+  color: #94a3b8 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .footer-links ul li a {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .footer-links ul li a:hover {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .footer-contact a {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .footer-contact a:hover {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .footer-location p {
+  color: #94a3b8 !important;
 }
 
 html[data-theme="dark"] .footer-copyright {
   border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .footer-copyright-text p {
+  color: #64748b !important;
+}
+
+html[data-theme="dark"] .footer-menu ul li a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .footer-menu ul li a:hover {
+  color: #38bdf8 !important;
 }
 
 /* Tickers in Dark Mode */
