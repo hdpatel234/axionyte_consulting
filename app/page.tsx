@@ -64,60 +64,93 @@ export default function HomePage() {
 
                 {/* Hero Item List Start */}
                 <div className="hero-item-list">
-                  {/* Hero Box 1 */}
+                  {/* Hero Box 1 Start */}
                   <div className="hero-item box-1 dark-box wow fadeInUp">
                     <div className="hero-item-content">
-                      <h3>
-                        &ldquo;Cybersecurity and AI are strategic business imperatives for modern enterprise resilience.&rdquo;
-                      </h3>
-                      <p>
-                        {COMPANY.owner}, <span>{COMPANY.role}</span>
-                      </p>
+                      <h3>&ldquo;Cybersecurity is not just tech, it&apos;s about trust &ndash; protecting your data.&rdquo;</h3>
+                      <p>{COMPANY.owner}, <span>{COMPANY.role}</span></p>
                     </div>
                     <div className="hero-author-image">
                       <figure className="image-anime">
-                        <img
-                          src="/images/axionyte-shield.png"
-                          alt="AXIONYTE Shield"
-                          style={{ width: "70px", height: "auto" }}
-                        />
+                        <img src="/images/hero-author-image.jpg" alt={COMPANY.owner} />
                       </figure>
                     </div>
                   </div>
+                  {/* Hero Box 1 End */}
 
-                  {/* Hero Box 2 */}
-                  <div
-                    className="hero-item box-2 dark-box wow fadeInUp"
-                    data-wow-delay="0.2s"
-                  >
+                  {/* Hero Box 2 Start */}
+                  <div className="hero-item box-2 dark-box wow fadeInUp" data-wow-delay="0.2s">
+                    <div className="hero-counter hero-item-content">
+                      <h2><span className="counter">15</span>K+</h2>
+                    </div>
                     <div className="hero-item-content">
-                      <h2 style={{ fontSize: "24px", color: "#00f0ff", marginBottom: "8px" }}>
-                        Strategic Advisory
-                      </h2>
-                      <h3>Enterprise Focus</h3>
-                      <p>Tailored cybersecurity and AI guidance aligned with your business goals.</p>
+                      <h3>Empowering businesses</h3>
+                      <p>Our experts combine advanced technology with years</p>
                     </div>
                   </div>
+                  {/* Hero Box 2 End */}
 
-                  {/* Hero Box 3 */}
-                  <div
-                    className="hero-item box-3 wow fadeInUp"
-                    data-wow-delay="0.4s"
-                    style={{
-                      background: "#ffffff",
-                      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.06)",
-                      border: "1px solid rgba(0, 0, 0, 0.06)",
-                    }}
-                  >
+                  {/* Hero Box 3 Start */}
+                  <div className="hero-item box-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div className="hero-client-box">
+                      {/* Satisfy Client Images Start */}
+                      <div className="satisfy-client-images">
+                        <div className="satisfy-client-image">
+                          <figure className="image-anime">
+                            <img src="/images/author-1.jpg" alt="Client 1" />
+                          </figure>
+                        </div>
+                        <div className="satisfy-client-image">
+                          <figure className="image-anime">
+                            <img src="/images/author-2.jpg" alt="Client 2" />
+                          </figure>
+                        </div>
+                        <div className="satisfy-client-image">
+                          <figure className="image-anime">
+                            <img src="/images/author-3.jpg" alt="Client 3" />
+                          </figure>
+                        </div>
+                        <div className="satisfy-client-image">
+                          <figure className="image-anime">
+                            <img src="/images/author-4.jpg" alt="Client 4" />
+                          </figure>
+                        </div>
+                        <div className="satisfy-client-image">
+                          <figure className="image-anime">
+                            <img src="/images/author-5.jpg" alt="Client 5" />
+                          </figure>
+                        </div>
+                      </div>
+                      {/* Satisfy Client Images End */}
+
+                      {/* Client Content Start */}
+                      <div className="hero-client-content hero-item-content">
+                        <h3>15K+ Satisfied Clients</h3>
+                        <p>Our experts combine advanced technology with years</p>
+                      </div>
+                      {/* Client Content End */}
+                    </div>
+
                     <div className="hero-item-content">
-                      <h3 style={{ color: "#0e1b2c", fontSize: "20px", marginBottom: "8px", fontWeight: 700 }}>
-                        Trusted Expertise
-                      </h3>
-                      <p style={{ color: "#475569", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-                        Collaborate with senior practitioners to evaluate risk, fortify architecture, and automate workflows.
-                      </p>
+                      <h2><span className="counter">500</span>+</h2>
+                      <p>Every day, our technology stops, and eliminate 500+ threats.</p>
                     </div>
                   </div>
+                  {/* Hero Box 3 End */}
+
+                  {/* Hero Box 4 Start */}
+                  <div className="hero-item box-4 dark-box wow fadeInUp" data-wow-delay="0.6s">
+                    <div className="hero-item-content">
+                      <h3>Empowering businesses to grow smarter, move faster, and stay secure.</h3>
+                    </div>
+
+                    <div className="hero-item-image">
+                      <figure>
+                        <img src="/images/hero-item-image.png" alt="Cloud Security & Smart Defense" />
+                      </figure>
+                    </div>
+                  </div>
+                  {/* Hero Box 4 End */}
                 </div>
                 {/* Hero Item List End */}
               </div>
