@@ -108,15 +108,24 @@ export default function ContactForm() {
             className="form-control"
             value={formData.serviceInterested}
             onChange={handleChange}
-            style={{ backgroundColor: "#050914", color: "#9ea4b5", border: "1px solid #1f2937" }}
+            style={{
+              backgroundColor: "#ffffff",
+              color: formData.serviceInterested ? "var(--text-color, #252B36)" : "#8d98aa",
+              borderColor: "var(--divider-color)",
+              cursor: "pointer",
+            }}
           >
-            <option value="">Select a Service or Topic</option>
+            <option value="" style={{ color: "#8d98aa", backgroundColor: "#ffffff" }}>
+              Select a Service or Topic
+            </option>
             {CORE_SERVICES.map((s) => (
-              <option key={s.id} value={s.title}>
+              <option key={s.id} value={s.title} style={{ color: "#252B36", backgroundColor: "#ffffff" }}>
                 {s.title}
               </option>
             ))}
-            <option value="General Inquiry">General Consultation Inquiry</option>
+            <option value="General Inquiry" style={{ color: "#252B36", backgroundColor: "#ffffff" }}>
+              General Consultation Inquiry
+            </option>
           </select>
         </div>
 

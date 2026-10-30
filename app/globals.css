@@ -1578,3 +1578,72 @@ html[data-theme="dark"] .step-progress-label {
   color: #64748b !important;
 }
 
+/* ==========================================================================
+   Partnerships & OEM Ecosystem Page Styles
+   ========================================================================== */
+.value-driver-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.value-driver-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(67, 141, 213, 0.4) !important;
+}
+
+.partnership-track-card {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.partnership-track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(23, 102, 168, 0.12) !important;
+}
+
+.step-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(67, 141, 213, 0.35) !important;
+  box-shadow: 0 12px 28px rgba(67, 141, 213, 0.08) !important;
+}
+
+@media (max-width: 991px) {
+  .partnership-intro-section {
+    padding: 50px 0 35px !important;
+  }
+  .partnership-tracks-section {
+    padding: 50px 0 !important;
+  }
+  .partnership-process-section {
+    padding: 50px 0 40px !important;
+  }
+}
+
+/* Form Controls & Select Dropdown Styling */
+select.form-control,
+.contact-us-form select.form-control {
+  background-color: #ffffff !important;
+  color: var(--text-color, #252B36) !important;
+  border: 1px solid var(--divider-color, rgba(23, 102, 168, 0.12)) !important;
+  border-radius: 12px !important;
+  padding: 12px 20px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+}
+
+select.form-control:focus,
+.contact-us-form select.form-control:focus {
+  border-color: var(--brand-blue, #438DD5) !important;
+  box-shadow: 0 0 0 3px rgba(67, 141, 213, 0.15) !important;
+}
+
+select.form-control option,
+.contact-us-form select.form-control option {
+  background-color: #ffffff !important;
+  color: var(--text-color, #252B36) !important;
+  padding: 10px 16px !important;
+}
+
