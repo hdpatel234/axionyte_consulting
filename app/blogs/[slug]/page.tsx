@@ -187,8 +187,8 @@ export default async function BlogDetailPage({ params }: Props) {
                         <span className="tag-links">
                           Category:
                           <Link href="/blogs">{post.category}</Link>
-                          <Link href="/services">Consulting</Link>
-                          <Link href="/solutions">Enterprise AI</Link>
+                          <Link href="/service">Consulting</Link>
+                          <Link href="/service">Enterprise AI</Link>
                         </span>
                       </div>
                     </div>

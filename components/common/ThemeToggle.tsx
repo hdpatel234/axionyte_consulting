@@ -15,28 +15,28 @@ export default function ThemeToggle({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("axionyte-theme");
-    const htmlTheme = document.documentElement.getAttribute("data-theme");
-    const currentTheme: "light" | "dark" =
-      savedTheme === "dark" || htmlTheme === "dark" ? "dark" : "light";
+    const timer = setTimeout(() => {
+      setMounted(true);
+      const savedTheme = localStorage.getItem("axionyte-theme");
+      const htmlTheme = document.documentElement.getAttribute("data-theme");
+      const currentTheme: "light" | "dark" =
+        savedTheme === "dark" || htmlTheme === "dark" ? "dark" : "light";
 
-    setTheme(currentTheme);
-    document.documentElement.setAttribute("data-theme", currentTheme);
+      setTheme(currentTheme);
+      document.documentElement.setAttribute("data-theme", currentTheme);
+    }, 0);
 
-    const handleThemeChange = (e: CustomEvent<"light" | "dark">) => {
-      setTheme(e.detail);
+    const handleThemeChange = (e: Event) => {
+      const customEvent = e as CustomEvent<"light" | "dark">;
+      if (customEvent.detail) {
+        setTheme(customEvent.detail);
+      }
     };
 
-    window.addEventListener(
-      "themechange" as any,
-      handleThemeChange as EventListener
-    );
+    window.addEventListener("themechange", handleThemeChange);
     return () => {
-      window.removeEventListener(
-        "themechange" as any,
-        handleThemeChange as EventListener
-      );
+      clearTimeout(timer);
+      window.removeEventListener("themechange", handleThemeChange);
     };
   }, []);
 

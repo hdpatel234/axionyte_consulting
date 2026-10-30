@@ -47,16 +47,21 @@
 /************************************/
 
 :root{
-	--primary-color					: #0F2453;
-	--secondary-color				: #F4F8FF;
-	--text-color					: #7C8192;
-	--accent-color					: #3F82FB;
-	--accent-secondary-color		: #0F2453;
+	--primary-color					: #1766A8;
+	--secondary-color				: #F5F8FC;
+	--text-color					: #697386;
+	--accent-color					: #438DD5;
+	--accent-secondary-color		: #1766A8;
+	--brand-blue					: #438DD5;
+	--brand-blue-dark				: #1766A8;
+	--brand-green					: #07865F;
+	--brand-green-dark				: #064D3D;
+	--brand-orange					: #F2A326;
 	--bg-color						: #FFFFFF;
 	--white-color					: #FFFFFF;
-	--black-color					: #000000;
-	--divider-color					: #0F24531A;
-	--dark-divider-color			: #FFFFFF1A;
+	--black-color					: #252B36;
+	--divider-color					: rgba(23, 102, 168, 0.12);
+	--dark-divider-color			: rgba(255, 255, 255, 0.15);
 	--error-color					: rgb(230, 87, 87);
 	--default-font					: "Sora", sans-serif;
 }

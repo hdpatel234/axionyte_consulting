@@ -20,13 +20,14 @@ export const COMPANY = {
     "https://www.google.com/maps/search/?api=1&query=1011+Ratnanjali+Solitair+Prernatirth+Derasar+Road+Ahmedabad+Gujarat+380015",
 };
 
+export const SHOW_BLOGS = false;
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Company", href: "/company" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Services", href: "/services" },
+  { label: "Service", href: "/service" },
   { label: "Partnerships", href: "/partnerships" },
-  { label: "Blogs", href: "/blogs" },
+  ...(SHOW_BLOGS ? [{ label: "Blogs", href: "/blogs" }] : []),
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -49,7 +50,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-1.svg",
     bgIcon: "/images/icon-service-item-1-bg.svg",
     image: "/images/case-study-image-1.jpg",
-    link: "/services",
+    link: "/service",
   },
   {
     id: "security-assessment",
@@ -59,7 +60,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-2.svg",
     bgIcon: "/images/icon-service-item-2-bg.svg",
     image: "/images/case-study-image-2.jpg",
-    link: "/services",
+    link: "/service",
   },
   {
     id: "risk-compliance-advisory",
@@ -69,7 +70,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-3.svg",
     bgIcon: "/images/icon-service-item-3-bg.svg",
     image: "/images/case-study-image-3.jpg",
-    link: "/services",
+    link: "/service",
   },
   {
     id: "ai-consulting",
@@ -79,7 +80,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-4.svg",
     bgIcon: "/images/icon-service-item-4-bg.svg",
     image: "/images/case-study-image-4.jpg",
-    link: "/services",
+    link: "/service",
   },
   {
     id: "ai-automation-solutions",
@@ -89,7 +90,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-5.svg",
     bgIcon: "/images/icon-service-item-5-bg.svg",
     image: "/images/case-study-image-5.jpg",
-    link: "/services",
+    link: "/service",
   },
   {
     id: "digital-security-strategy",
@@ -99,7 +100,7 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-6.svg",
     bgIcon: "/images/icon-service-item-6-bg.svg",
     image: "/images/case-study-image-6.jpg",
-    link: "/services",
+    link: "/service",
   },
 ];
 

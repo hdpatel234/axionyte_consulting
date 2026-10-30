@@ -85,7 +85,7 @@ export default function PartnershipsPage() {
                 >
                   <i
                     className="fa-solid fa-network-wired mb-3"
-                    style={{ fontSize: "36px", color: "#00f0ff" }}
+                    style={{ fontSize: "36px", color: "var(--brand-blue, #438DD5)" }}
                   ></i>
                   <h4 style={{ color: "#ffffff", marginBottom: "10px" }}>
                     OEM Partner Program Under Alignment
@@ -144,7 +144,7 @@ export default function PartnershipsPage() {
                 >
                   <i
                     className="fa-solid fa-handshake mb-3"
-                    style={{ fontSize: "36px", color: "#00f0ff" }}
+                    style={{ fontSize: "36px", color: "var(--brand-blue, #438DD5)" }}
                   ></i>
                   <h4 style={{ color: "#ffffff", marginBottom: "10px" }}>
                     Solution Partner Ecosystem

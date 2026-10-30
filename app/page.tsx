@@ -8,6 +8,7 @@ import {
   HOW_IT_WORKS_STEPS,
   FAQS,
   BLOG_POSTS,
+  SHOW_BLOGS,
 } from "@/lib/company-data";
 
 export const metadata: Metadata = {
@@ -54,8 +55,8 @@ export default function HomePage() {
                       </Link>
                     </div>
                     <div className="hero-btn ms-sm-3 mt-2 mt-sm-0">
-                      <Link href="/services" className="btn-default btn-hero-secondary">
-                        Explore Services
+                      <Link href="/service" className="btn-default btn-hero-secondary">
+                        Explore Service
                       </Link>
                     </div>
                   </div>
@@ -235,7 +236,7 @@ export default function HomePage() {
 
             <div className="col-lg-4 text-lg-end">
               <div className="section-btn wow fadeInUp" data-wow-delay="0.3s">
-                <Link href="/services" className="btn-default">
+                <Link href="/service" className="btn-default">
                   View All Services
                 </Link>
               </div>
@@ -250,7 +251,7 @@ export default function HomePage() {
                   data-wow-delay={`${0.15 * (idx + 1)}s`}
                 >
                   <div className="service-card-image">
-                    <Link href="/services">
+                    <Link href={`/service/${service.id}`}>
                       <img
                         src={service.image}
                         alt={service.title}
@@ -265,10 +266,10 @@ export default function HomePage() {
                   <div className="service-card-content">
                     <div className="service-card-header">
                       <h3 className="service-card-title">
-                        <Link href="/services">{service.title}</Link>
+                        <Link href={`/service/${service.id}`}>{service.title}</Link>
                       </h3>
                       <Link
-                        href="/services"
+                        href={`/service/${service.id}`}
                         className="service-card-arrow-btn"
                         aria-label={`Read more about ${service.title}`}
                       >
@@ -277,7 +278,7 @@ export default function HomePage() {
                     </div>
                     <p className="service-card-desc">{service.description}</p>
                     <div className="service-card-footer">
-                      <Link href="/contact" className="service-card-action">
+                      <Link href={`/service/${service.id}`} className="service-card-action">
                         Consult on this Service &rarr;
                       </Link>
                     </div>
@@ -380,7 +381,7 @@ export default function HomePage() {
                   style={{
                     fontSize: "20px",
                     fontWeight: 700,
-                    color: "#00f0ff",
+                    color: "var(--brand-blue, #438DD5)",
                     textDecoration: "none",
                     display: "inline-flex",
                     alignItems: "center",
@@ -447,7 +448,7 @@ export default function HomePage() {
                 <h3>Vulnerability Discovery</h3>
                 <p>Systematic identification of security blind spots across cloud and on-premise environments.</p>
                 <div className="feature-card-footer">
-                  <Link href="/services" className="feature-link">
+                  <Link href="/service" className="feature-link">
                     Explore Advisory &rarr;
                   </Link>
                 </div>
@@ -462,7 +463,7 @@ export default function HomePage() {
                 <h3>Regulatory Alignment</h3>
                 <p>Aligning data governance with international cybersecurity and privacy standards.</p>
                 <div className="feature-card-footer">
-                  <Link href="/services" className="feature-link">
+                  <Link href="/service" className="feature-link">
                     Explore Advisory &rarr;
                   </Link>
                 </div>
@@ -477,7 +478,7 @@ export default function HomePage() {
                 <h3>AI Feasibility &amp; Safety</h3>
                 <p>Assessing AI readiness, mitigating algorithm risks, and designing secure automation pipelines.</p>
                 <div className="feature-card-footer">
-                  <Link href="/solutions" className="feature-link">
+                  <Link href="/service" className="feature-link">
                     Explore Solutions &rarr;
                   </Link>
                 </div>
@@ -492,7 +493,7 @@ export default function HomePage() {
                 <h3>Incident Preparedness</h3>
                 <p>Establishing clear response protocols to contain threats and maintain business continuity.</p>
                 <div className="feature-card-footer">
-                  <Link href="/services" className="feature-link">
+                  <Link href="/service" className="feature-link">
                     Explore Advisory &rarr;
                   </Link>
                 </div>
@@ -554,73 +555,75 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Recent Blogs Preview Section Start */}
-      <div className="our-blog">
-        <div className="container">
-          <div className="row section-row align-items-center">
-            <div className="col-lg-8">
-              <div className="section-title">
-                <h3 className="wow fadeInUp">Latest Insights</h3>
-                <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Articles on <span>Cybersecurity & AI Strategy</span>
-                </h2>
-                <p className="wow fadeInUp" data-wow-delay="0.2s">
-                  Explore our latest editorial analyses on securing digital infrastructure, evaluating AI safety, and modern risk governance.
-                </p>
+      {/* Recent Blogs Preview Section Start - Conditional via SHOW_BLOGS flag */}
+      {SHOW_BLOGS && (
+        <div className="our-blog">
+          <div className="container">
+            <div className="row section-row align-items-center">
+              <div className="col-lg-8">
+                <div className="section-title">
+                  <h3 className="wow fadeInUp">Latest Insights</h3>
+                  <h2 className="text-anime-style-2" data-cursor="-opaque">
+                    Articles on <span>Cybersecurity & AI Strategy</span>
+                  </h2>
+                  <p className="wow fadeInUp" data-wow-delay="0.2s">
+                    Explore our latest editorial analyses on securing digital infrastructure, evaluating AI safety, and modern risk governance.
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-lg-4 text-lg-end">
+                <div className="section-btn wow fadeInUp" data-wow-delay="0.3s">
+                  <Link href="/blogs" className="btn-default">
+                    View All Articles
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="col-lg-4 text-lg-end">
-              <div className="section-btn wow fadeInUp" data-wow-delay="0.3s">
-                <Link href="/blogs" className="btn-default">
-                  View All Articles
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            {BLOG_POSTS.map((post, idx) => (
-              <div className="col-lg-4 col-md-6 mb-4" key={post.slug}>
-                <div
-                  className="blog-item wow fadeInUp"
-                  data-wow-delay={`${0.15 * (idx + 1)}s`}
-                >
-                  <div className="blog-featured-image">
-                    <figure className="image-anime">
-                      <Link href={`/blogs/${post.slug}`}>
-                        <img src={post.image} alt={post.title} />
-                      </Link>
-                    </figure>
-                    <div className="blog-date">
-                      <p>{post.date}</p>
-                    </div>
-                  </div>
-
-                  <div className="blog-content">
-                    <div className="blog-content-header">
-                      <span className="badge mb-2" style={{ backgroundColor: "rgba(0,240,255,0.1)", color: "#00f0ff", padding: "4px 10px", borderRadius: "4px", fontSize: "12px" }}>
-                        {post.category}
-                      </span>
-                      <h3>
-                        <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
-                      </h3>
+            <div className="row">
+              {BLOG_POSTS.map((post, idx) => (
+                <div className="col-lg-4 col-md-6 mb-4" key={post.slug}>
+                  <div
+                    className="blog-item wow fadeInUp"
+                    data-wow-delay={`${0.15 * (idx + 1)}s`}
+                  >
+                    <div className="blog-featured-image">
+                      <figure className="image-anime">
+                        <Link href={`/blogs/${post.slug}`}>
+                          <img src={post.image} alt={post.title} />
+                        </Link>
+                      </figure>
+                      <div className="blog-date">
+                        <p>{post.date}</p>
+                      </div>
                     </div>
 
-                    <p>{post.excerpt}</p>
+                    <div className="blog-content">
+                      <div className="blog-content-header">
+                        <span className="badge mb-2" style={{ backgroundColor: "rgba(67,141,213,0.12)", color: "#1766A8", padding: "4px 10px", borderRadius: "4px", fontSize: "12px" }}>
+                          {post.category}
+                        </span>
+                        <h3>
+                          <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+                        </h3>
+                      </div>
 
-                    <div className="blog-btn">
-                      <Link href={`/blogs/${post.slug}`} className="readmore-btn">
-                        Read Article <i className="fa-solid fa-arrow-right ms-1"></i>
-                      </Link>
+                      <p>{post.excerpt}</p>
+
+                      <div className="blog-btn">
+                        <Link href={`/blogs/${post.slug}`} className="readmore-btn">
+                          Read Article <i className="fa-solid fa-arrow-right ms-1"></i>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
       {/* Recent Blogs Preview Section End */}
     </>
   );

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COMPANY, NAV_LINKS } from "@/lib/company-data";
-import ThemeToggle from "@/components/common/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -57,7 +56,7 @@ export default function Header() {
         <div className={`header-sticky ${isSticky ? "active" : ""}`}>
           <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-              {/* Official AXIONYTE Consulting Logo */}
+              {/* Official AXIONYTE Consulting Logo - Transparent & Prominent */}
               <Link
                 className="navbar-brand"
                 href="/"
@@ -65,29 +64,21 @@ export default function Header() {
                   display: "inline-flex",
                   alignItems: "center",
                   textDecoration: "none",
+                  padding: "4px 0",
                 }}
               >
-                <div
+                <img
+                  src="/images/axionyte-logo.png"
+                  alt={COMPANY.name}
+                  className="header-logo-img"
                   style={{
-                    background: "#ffffff",
-                    padding: "6px 14px",
-                    borderRadius: "8px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+                    height: "54px",
+                    width: "auto",
+                    maxWidth: "270px",
+                    objectFit: "contain",
+                    display: "block",
                   }}
-                >
-                  <img
-                    src="/images/axionyte-logo.png"
-                    alt={COMPANY.name}
-                    style={{
-                      height: "40px",
-                      width: "auto",
-                      maxWidth: "230px",
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
+                />
               </Link>
 
               {/* Desktop Menu */}
@@ -113,18 +104,16 @@ export default function Header() {
                   </ul>
                 </div>
 
-                {/* Header CTA Button & Theme Toggle */}
-                <div className="header-btn" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <ThemeToggle />
+                {/* Header CTA Button */}
+                <div className="header-btn" style={{ display: "flex", alignItems: "center" }}>
                   <Link className="btn-default" href="/contact">
                     Talk with Our Expert
                   </Link>
                 </div>
               </div>
 
-              {/* Mobile Right Controls: Theme Toggle & Hamburger */}
-              <div className="mobile-header-controls d-lg-none" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <ThemeToggle />
+              {/* Mobile Right Controls: Hamburger */}
+              <div className="mobile-header-controls d-lg-none" style={{ display: "flex", alignItems: "center" }}>
                 <div
                   className="navbar-toggle"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -165,9 +154,6 @@ export default function Header() {
                     </li>
                   ))}
                   <li style={{ marginTop: "14px", padding: "0 10px" }}>
-                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                      <ThemeToggle showText={true} />
-                    </div>
                     <Link
                       href="/contact"
                       className="btn-default"

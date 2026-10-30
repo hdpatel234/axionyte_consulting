@@ -113,9 +113,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var saved = localStorage.getItem('axionyte-theme');
-                  var theme = saved === 'dark' ? 'dark' : 'light';
-                  document.documentElement.setAttribute('data-theme', theme);
+                  document.documentElement.setAttribute('data-theme', 'light');
                 } catch (e) {}
               })();
             `,

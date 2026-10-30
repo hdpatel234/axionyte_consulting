@@ -22,7 +22,7 @@ export default function ServiceSinglePage() {
                         <nav className="wow fadeInUp">
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><Link href="/">home</Link></li>
-                                <li className="breadcrumb-item"><Link href="/services">services</Link></li>
+                                <li className="breadcrumb-item"><Link href="/service">Service</Link></li>
                                 <li className="breadcrumb-item active" aria-current="page">Identity & Access Management</li>
                             </ol>
                         </nav>

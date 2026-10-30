@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { BLOG_POSTS } from "@/lib/company-data";
+import { BLOG_POSTS, SHOW_BLOGS } from "@/lib/company-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://axionyte-consulting.vercel.app";
@@ -7,10 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/company",
-    "/solutions",
-    "/services",
+    "/service",
     "/partnerships",
-    "/blogs",
     "/contact",
     "/case-studies",
     "/privacy-policy",
@@ -19,17 +17,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/faqs",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date("2026-10-29"),
+    lastModified: new Date("2026-10-30"),
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const blogRoutes = BLOG_POSTS.map((post) => ({
-    url: `${baseUrl}/blogs/${post.slug}`,
-    lastModified: new Date("2026-10-29"),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  const blogRoutes = SHOW_BLOGS
+    ? BLOG_POSTS.map((post) => ({
+        url: `${baseUrl}/blogs/${post.slug}`,
+        lastModified: new Date("2026-10-30"),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      }))
+    : [];
 
   return [...staticRoutes, ...blogRoutes];
 }

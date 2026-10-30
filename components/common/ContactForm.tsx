@@ -147,9 +147,10 @@ export default function ContactForm() {
               <div
                 className="h4 mt-3"
                 style={{
-                  color: "#00f0ff",
+                  color: "#07865F",
                   fontSize: "16px",
                   lineHeight: "1.5",
+                  fontWeight: 600,
                 }}
               >
                 Thank you! Your inquiry has been received. Our team will contact you shortly.

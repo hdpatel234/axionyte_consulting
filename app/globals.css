@@ -1,10 +1,28 @@
 /* Netzon Next.js Global Styles */
 
 :root {
-  --primary-color: #00f0ff;
-  --text-color: #9ea4b5;
-  --white-color: #ffffff;
-  --dark-color: #050914;
+  /* AXIONYTE Official Brand Palette */
+  --brand-blue: #438DD5;
+  --brand-blue-dark: #1766A8;
+  --brand-green: #07865F;
+  --brand-green-dark: #064D3D;
+  --brand-orange: #F2A326;
+  --brand-orange-hover: #D98E1A;
+
+  --primary-color: #1766A8;
+  --accent-color: #438DD5;
+  --accent-secondary-color: #1766A8;
+  --secondary-color: #F5F8FC;
+  --secondary-green: #07865F;
+  --accent-orange: #F2A326;
+
+  --text-color: #252B36;
+  --text-secondary: #697386;
+  --bg-color: #FFFFFF;
+  --white-color: #FFFFFF;
+  --dark-color: #0E1B2C;
+  --divider-color: rgba(23, 102, 168, 0.12);
+  --dark-divider-color: rgba(255, 255, 255, 0.12);
 }
 
 html {
@@ -1022,3 +1040,284 @@ html[data-theme="dark"] .preloader {
 .btn-default.btn-sm.no-arrow {
   padding-right: 18px !important;
 }
+
+/* ==========================================================================
+   AXIONYTE Brand Enhancements & Compact Footer Styling
+   ========================================================================== */
+
+/* Header & Mobile Logo Sizing */
+.header-logo-img {
+  height: 54px;
+  width: auto;
+  max-width: 270px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .header-logo-img {
+    height: 48px;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-logo-img {
+    height: 42px;
+    max-width: 210px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-logo-img {
+    height: 38px;
+    max-width: 185px;
+  }
+}
+
+/* Compact Footer Design */
+footer.main-footer.compact-footer {
+  padding: 60px 0 0 !important;
+  background: linear-gradient(135deg, #0e1b2c 0%, #1766A8 100%) !important;
+  color: #ffffff !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-main-row {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+}
+
+.footer-company-desc {
+  color: #cbd5e1 !important;
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 16px !important;
+  max-width: 420px;
+}
+
+.footer-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #F2A326;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand-badge .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #07865F;
+  box-shadow: 0 0 6px #07865F;
+}
+
+.footer-links h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 20px !important;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-links h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2.5px;
+  background: var(--brand-blue, #438DD5);
+  border-radius: 2px;
+}
+
+.footer-links ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px !important;
+}
+
+.footer-links ul li a {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-size: 14.5px !important;
+  transition: all 0.25s ease !important;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: #438DD5 !important;
+  transform: translateX(4px);
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+.footer-contact-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.footer-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(67, 141, 213, 0.15);
+  border: 1px solid rgba(67, 141, 213, 0.25);
+  color: #438DD5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.contact-value {
+  color: #ffffff !important;
+  font-size: 14.5px !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-value:hover {
+  color: #438DD5 !important;
+}
+
+.contact-address {
+  font-style: normal;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Footer Copyright bar */
+footer.main-footer .footer-copyright {
+  padding: 22px 0 !important;
+  background: transparent !important;
+}
+
+.footer-copyright-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-copyright-text p {
+  color: #94a3b8 !important;
+  font-size: 13.5px !important;
+  margin: 0 !important;
+}
+
+.footer-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.footer-menu ul li a {
+  color: #94a3b8 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.footer-menu ul li a:hover {
+  color: #438DD5 !important;
+}
+
+/* Mobile Responsiveness Improvements */
+@media (max-width: 991px) {
+  header.main-header {
+    top: 15px;
+  }
+
+  header.main-header .navbar {
+    padding: 12px 18px;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 32px 24px !important;
+  }
+
+  .footer-links {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-body .hero-btn {
+    width: 100%;
+  }
+
+  .hero-body .hero-btn a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-body .ms-sm-3 {
+    margin-left: 0 !important;
+  }
+
+  .section-title h2 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  .page-header-box h1 {
+    font-size: 32px !important;
+  }
+}
+
