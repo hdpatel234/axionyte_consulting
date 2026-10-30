@@ -109,6 +109,7 @@ export const CORE_SOLUTIONS = [
     id: "threat-defense",
     title: "Adaptive Threat Defense",
     tagline: "Proactive Protection",
+    image: "/images/solution-threat-defense.jpg",
     description:
       "Multi-layered cybersecurity controls and continuous monitoring methodologies engineered to anticipate, detect, and neutralize emerging cyber threats.",
     points: [
@@ -121,6 +122,7 @@ export const CORE_SOLUTIONS = [
     id: "cloud-security",
     title: "Cloud & Infrastructure Resilience",
     tagline: "Secure Transformation",
+    image: "/images/solution-cloud-security.jpg",
     description:
       "Hardening cloud infrastructures across AWS, Azure, and hybrid environments with zero-trust frameworks, least-privilege access, and automated guardrails.",
     points: [
@@ -133,6 +135,7 @@ export const CORE_SOLUTIONS = [
     id: "ai-transformation",
     title: "Enterprise AI Modernization",
     tagline: "Intelligent Enablement",
+    image: "/images/solution-ai-modernization.jpg",
     description:
       "Enabling safe, compliant, and performant AI integration across enterprise operations, from model evaluation to secure data pipeline engineering.",
     points: [
@@ -145,6 +148,7 @@ export const CORE_SOLUTIONS = [
     id: "grc-solutions",
     title: "Governance, Risk & Compliance",
     tagline: "Regulatory Confidence",
+    image: "/images/solution-grc.jpg",
     description:
       "Bridging the gap between technological reality and statutory mandates, ensuring sustained alignment with ISO 27001, SOC 2, GDPR, and regional standards.",
     points: [

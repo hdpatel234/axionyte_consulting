@@ -279,7 +279,7 @@ const ALL_SERVICE_DETAILS: Record<
       "Maximized uptime and continuity for critical services",
       "Deep forensic visibility across enterprise telemetry",
     ],
-    image: "/images/case-study-image-1.jpg",
+    image: "/images/solution-threat-defense.jpg",
     icon: "/images/icon-service-item-1.svg",
   },
   "cloud-security": {
@@ -310,8 +310,74 @@ const ALL_SERVICE_DETAILS: Record<
       "Enforced compliance guardrails embedded directly into CI/CD pipelines",
       "Resilient, highly available disaster recovery topologies",
     ],
-    image: "/images/case-study-image-2.jpg",
+    image: "/images/solution-cloud-security.jpg",
     icon: "/images/icon-service-item-2.svg",
+  },
+  "ai-transformation": {
+    title: "Enterprise AI Modernization",
+    subtitle: "Safe, Compliant & Performant AI Integration",
+    tagline: "Intelligent Enablement",
+    description:
+      "Enabling safe, compliant, and performant AI integration across enterprise operations, from model evaluation to secure data pipeline engineering.",
+    overview: [
+      "Artificial intelligence represents a transformational operational advantage, but enterprise adoption demands rigorous security boundaries, model governance, and resilient data engineering.",
+      "AXIONYTE Consulting guides enterprises in safely deploying AI capabilities, mitigating algorithmic drift, securing proprietary IP, and automating mission-critical workflows.",
+    ],
+    features: [
+      {
+        title: "Secure AI Architecture Design",
+        desc: "Designing sandboxed enterprise LLM architectures, zero-data-retention API endpoints, and private vector database pipelines.",
+      },
+      {
+        title: "Workflow Automation Feasibility",
+        desc: "Evaluating business workflows for autonomous AI agent orchestration, cost-benefit trade-offs, and reliability metrics.",
+      },
+      {
+        title: "AI Risk Management & Governance",
+        desc: "Establishing guardrails against prompt injection, data poisoning, model bias, and regulatory non-compliance.",
+      },
+    ],
+    benefits: [
+      "Accelerated adoption of generative and agentic AI without enterprise risk",
+      "Protection of proprietary intellectual property and customer datasets",
+      "Drastic reduction in manual overhead across complex operational workflows",
+      "Full alignment with emerging EU AI Act, NIST AI RMF, and ISO 42001 standards",
+    ],
+    image: "/images/solution-ai-modernization.jpg",
+    icon: "/images/icon-service-item-4.svg",
+  },
+  "grc-solutions": {
+    title: "Governance, Risk & Compliance",
+    subtitle: "Regulatory Confidence & Trust Frameworks",
+    tagline: "Regulatory Confidence",
+    description:
+      "Bridging the gap between technological reality and statutory mandates, ensuring sustained alignment with ISO 27001, SOC 2, GDPR, and regional standards.",
+    overview: [
+      "Modern compliance requires continuous technical proof rather than annual check-box paperwork. AXIONYTE bridges executive governance and technical controls.",
+      "We design automated compliance monitoring pipelines that continuously test configurations, audit vendor access, and remediate compliance drift in real time.",
+    ],
+    features: [
+      {
+        title: "Gap Analysis & Remediation",
+        desc: "Rigorous technical audits against ISO 27001, SOC 2 Type II, HIPAA, PCI-DSS, and GDPR frameworks.",
+      },
+      {
+        title: "Vendor Risk Management",
+        desc: "Third-party vendor assessment protocols, API access scoping, and supply-chain risk scoring.",
+      },
+      {
+        title: "Continuous Compliance Monitoring",
+        desc: "Automated evidence collection, policy-as-code guardrails, and executive posture dashboards.",
+      },
+    ],
+    benefits: [
+      "Streamlined audit readiness reducing preparation cycles by up to 60%",
+      "Institutional credibility with global enterprise clients and investors",
+      "Immediate detection and auto-remediation of compliance drift",
+      "Quantifiable risk reduction metrics for executive leadership and boards",
+    ],
+    image: "/images/solution-grc.jpg",
+    icon: "/images/icon-service-item-3.svg",
   },
 };
 

@@ -404,6 +404,7 @@ export default function HomePage() {
                 >
                   <div className="how-it-work-header">
                     <div className="how-it-work-number">
+                      <span className="step-tag">Phase</span>
                       <h3>{step.step}</h3>
                     </div>
                     <div className="how-it-work-icon">
@@ -413,6 +414,15 @@ export default function HomePage() {
                   <div className="how-it-work-content">
                     <h3>{step.title}</h3>
                     <p>{step.description}</p>
+                  </div>
+                  <div className="how-it-work-footer">
+                    <div className="step-progress-bar">
+                      <span
+                        className="step-progress-fill"
+                        style={{ width: `${(idx + 1) * 25}%` }}
+                      ></span>
+                    </div>
+                    <span className="step-progress-label">Milestone 0{idx + 1} / 04</span>
                   </div>
                 </div>
               </div>

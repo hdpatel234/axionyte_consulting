@@ -52,63 +52,107 @@ export default function ServicePage() {
             {CORE_SOLUTIONS.map((sol, idx) => (
               <div className="col-lg-6 mb-4" key={sol.id}>
                 <div
-                  className="service-item wow fadeInUp"
+                  className="service-item solution-card-item wow fadeInUp"
                   data-wow-delay={`${0.15 * (idx + 1)}s`}
                   style={{
                     height: "100%",
-                    padding: "40px 32px",
+                    display: "flex",
+                    flexDirection: "column",
                     background: "#ffffff",
                     borderRadius: "16px",
-                    border: "1.5px solid var(--divider-color)",
+                    border: "1.5px solid var(--divider-color, rgba(14,27,44,0.08))",
                     boxShadow: "0 8px 24px rgba(0,0,0,0.03)",
+                    overflow: "hidden",
                   }}
                 >
-                  <div className="service-header d-flex justify-content-between align-items-center mb-3">
-                    <span
-                      style={{
-                        color: "var(--brand-blue, #438DD5)",
-                        fontSize: "13px",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "1px",
-                      }}
+                  {/* Solution Featured Image */}
+                  <div
+                    className="solution-card-image"
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "220px",
+                      overflow: "hidden",
+                      backgroundColor: "#0e1b2c",
+                    }}
+                  >
+                    <Link
+                      href={`/service/${sol.id}`}
+                      style={{ display: "block", width: "100%", height: "100%" }}
+                      aria-label={`Explore ${sol.title}`}
                     >
-                      {sol.tagline}
-                    </span>
-                    <div className="service-btn">
-                      <Link href={`/service/${sol.id}`}>
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </Link>
-                    </div>
+                      <img
+                        src={sol.image}
+                        alt={sol.title}
+                        loading="lazy"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          display: "block",
+                          transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)",
+                        }}
+                      />
+                    </Link>
                   </div>
 
-                  <div className="service-body">
-                    <h3 style={{ fontSize: "22px", marginBottom: "14px" }}>
-                      <Link href={`/service/${sol.id}`}>{sol.title}</Link>
-                    </h3>
-                    <p style={{ marginBottom: "20px", color: "var(--text-secondary, #697386)" }}>{sol.description}</p>
+                  <div
+                    style={{
+                      padding: "32px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: 1,
+                    }}
+                  >
+                    <div className="service-header d-flex justify-content-between align-items-center mb-3">
+                      <span
+                        style={{
+                          color: "var(--brand-blue, #438DD5)",
+                          fontSize: "13px",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "1px",
+                        }}
+                      >
+                        {sol.tagline}
+                      </span>
+                      <div className="service-btn">
+                        <Link href={`/service/${sol.id}`} aria-label={`View ${sol.title} details`}>
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </Link>
+                      </div>
+                    </div>
 
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                      {sol.points.map((pt, pIdx) => (
-                        <li
-                          key={pIdx}
-                          style={{
-                            color: "var(--text-color, #252B36)",
-                            fontSize: "14px",
-                            marginBottom: "10px",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "10px",
-                          }}
-                        >
-                          <i
-                            className="fa-solid fa-circle-check"
-                            style={{ color: "var(--brand-green, #07865F)", fontSize: "15px" }}
-                          ></i>
-                          {pt}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="service-body">
+                      <h3 style={{ fontSize: "22px", marginBottom: "14px" }}>
+                        <Link href={`/service/${sol.id}`}>{sol.title}</Link>
+                      </h3>
+                      <p style={{ marginBottom: "20px", color: "var(--text-secondary, #697386)" }}>
+                        {sol.description}
+                      </p>
+
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                        {sol.points.map((pt, pIdx) => (
+                          <li
+                            key={pIdx}
+                            style={{
+                              color: "var(--text-color, #252B36)",
+                              fontSize: "14px",
+                              marginBottom: "10px",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "10px",
+                            }}
+                          >
+                            <i
+                              className="fa-solid fa-circle-check"
+                              style={{ color: "var(--brand-green, #07865F)", fontSize: "15px" }}
+                            ></i>
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1078,15 +1078,16 @@ html[data-theme="dark"] .preloader {
 
 /* Compact Footer Design */
 footer.main-footer.compact-footer {
-  padding: 60px 0 0 !important;
+  padding: 48px 0 0 !important;
   background: linear-gradient(135deg, #0e1b2c 0%, #1766A8 100%) !important;
   color: #ffffff !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-main-row {
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 24px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  margin-bottom: 0 !important;
 }
 
 .footer-logo-img {
@@ -1155,7 +1156,15 @@ footer.main-footer.compact-footer {
 }
 
 .footer-links ul li {
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer-links ul li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
 }
 
 .footer-links ul li a {
@@ -1230,8 +1239,11 @@ footer.main-footer.compact-footer {
 }
 
 /* Footer Copyright bar */
-footer.main-footer .footer-copyright {
-  padding: 22px 0 !important;
+footer.main-footer .footer-copyright,
+.footer-copyright {
+  margin-top: 0 !important;
+  padding: 18px 0 20px !important;
+  border-top: none !important;
   background: transparent !important;
 }
 
@@ -1319,5 +1331,250 @@ footer.main-footer .footer-copyright {
   .page-header-box h1 {
     font-size: 32px !important;
   }
+}
+
+/* Strategic Solutions / Practice Areas Cards */
+.solution-card-item {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.solution-card-item:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 42px rgba(14, 27, 44, 0.1) !important;
+  border-color: rgba(67, 141, 213, 0.45) !important;
+}
+
+.solution-card-item:hover .solution-card-image img {
+  transform: scale(1.06) !important;
+}
+
+.solution-card-item:hover .service-btn a {
+  background-color: var(--brand-blue, #438DD5) !important;
+  color: #ffffff !important;
+  border-color: var(--brand-blue, #438DD5) !important;
+}
+
+.solution-card-item:hover .service-body h3 a {
+  color: var(--brand-blue, #438DD5) !important;
+}
+
+/* ==========================================================================
+   Consulting Methodology / Engagement Process Cards
+   ========================================================================== */
+
+.how-it-work-item,
+.how-work-item {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(14, 27, 44, 0.08) !important;
+  border-radius: 18px !important;
+  padding: 36px 28px 30px !important;
+  height: 100% !important;
+  min-height: 360px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.how-it-work-item::before,
+.how-work-item::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3.5px !important;
+  background: linear-gradient(90deg, #438DD5, #07865F) !important;
+  opacity: 0 !important;
+  transition: opacity 0.35s ease !important;
+}
+
+.how-it-work-item:hover,
+.how-work-item:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 42px rgba(14, 27, 44, 0.09) !important;
+  border-color: rgba(67, 141, 213, 0.4) !important;
+}
+
+.how-it-work-item:hover::before,
+.how-work-item:hover::before {
+  opacity: 1 !important;
+}
+
+/* Header with Step Number & Circular Icon Badge */
+.how-it-work-header,
+.how-work-item-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 22px !important;
+}
+
+.how-it-work-number,
+.how-work-item-no {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.how-it-work-number .step-tag {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  color: var(--brand-blue, #438DD5) !important;
+  margin-bottom: 4px !important;
+}
+
+.how-it-work-number h3,
+.how-work-item-no h3 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  color: #0e1b2c !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 !important;
+  transition: color 0.3s ease !important;
+}
+
+.how-it-work-item:hover .how-it-work-number h3,
+.how-work-item:hover .how-work-item-no h3 {
+  color: var(--brand-blue, #438DD5) !important;
+}
+
+/* Icon Box in Process Card */
+.how-it-work-icon,
+.how-work-item-header .icon-box {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #438DD5 0%, #1766A8 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 18px rgba(67, 141, 213, 0.28) !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  flex-shrink: 0 !important;
+}
+
+.how-it-work-item:hover .how-it-work-icon,
+.how-work-item:hover .how-work-item-header .icon-box {
+  transform: scale(1.08) rotate(3deg) !important;
+  background: linear-gradient(135deg, #07865F 0%, #056145 100%) !important;
+  box-shadow: 0 8px 22px rgba(7, 134, 95, 0.35) !important;
+}
+
+.how-it-work-icon img,
+.how-work-item-header .icon-box img {
+  width: 26px !important;
+  height: 26px !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Content Area */
+.how-it-work-content,
+.how-work-item-content {
+  flex-grow: 1 !important;
+}
+
+.how-it-work-content h3,
+.how-work-item-content h3 {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: #0e1b2c !important;
+  line-height: 1.35 !important;
+  margin-bottom: 12px !important;
+  transition: color 0.25s ease !important;
+}
+
+.how-it-work-item:hover .how-it-work-content h3,
+.how-work-item:hover .how-work-item-content h3 {
+  color: var(--brand-blue, #438DD5) !important;
+}
+
+.how-it-work-content p,
+.how-work-item-content p {
+  font-size: 14px !important;
+  color: #556070 !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+/* Milestone Progress Footer */
+.how-it-work-footer {
+  margin-top: 24px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(14, 27, 44, 0.06) !important;
+}
+
+.step-progress-bar {
+  width: 100% !important;
+  height: 4px !important;
+  background: rgba(14, 27, 44, 0.06) !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+  margin-bottom: 8px !important;
+}
+
+.step-progress-fill {
+  display: block !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, #438DD5 0%, #07865F 100%) !important;
+  border-radius: 3px !important;
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.step-progress-label {
+  display: block !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+}
+
+/* Dark Mode Overrides */
+html[data-theme="dark"] .how-it-work-item,
+html[data-theme="dark"] .how-work-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="dark"] .how-it-work-item:hover,
+html[data-theme="dark"] .how-work-item:hover {
+  border-color: rgba(67, 141, 213, 0.45) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .how-it-work-number h3,
+html[data-theme="dark"] .how-work-item-no h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .how-it-work-content h3,
+html[data-theme="dark"] .how-work-item-content h3 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .how-it-work-content p,
+html[data-theme="dark"] .how-work-item-content p {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .how-it-work-footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .step-progress-bar {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .step-progress-label {
+  color: #64748b !important;
 }
 
