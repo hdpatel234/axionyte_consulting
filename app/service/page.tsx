@@ -52,7 +52,7 @@ export default function ServicePage() {
             {CORE_SOLUTIONS.map((sol, idx) => (
               <div className="col-lg-6 mb-4" key={sol.id}>
                 <div
-                  className="service-item solution-card-item wow fadeInUp"
+                  className="solution-card-item wow fadeInUp"
                   data-wow-delay={`${0.15 * (idx + 1)}s`}
                   style={{
                     height: "100%",
@@ -247,7 +247,7 @@ export default function ServicePage() {
             <Link href="/contact" className="btn-default">
               Talk with Our Expert
             </Link>
-            <a href={COMPANY.phoneLink} className="btn-default btn-highlighted">
+            <a href={COMPANY.phoneLink} className="btn-secondary-green">
               Call {COMPANY.phone}
             </a>
           </div>

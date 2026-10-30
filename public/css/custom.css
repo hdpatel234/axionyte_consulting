@@ -47,20 +47,46 @@
 /************************************/
 
 :root{
+	/* Official Extracted AXIONYTE Brand Palette */
+	--color-primary					: #388ADE;
+	--color-primary-dark			: #1766A8;
+	--color-primary-light			: #EBF3FC;
+	--color-secondary				: #07865F;
+	--color-secondary-dark			: #062C21;
+	--color-secondary-light			: #F0F8F5;
+	--color-accent					: #F2A326;
+	--color-accent-hover			: #D98E1A;
+	--color-background				: #FFFFFF;
+	--color-surface					: #F5F8FC;
+	--color-surface-green			: #F0F8F5;
+	--color-text					: #252B36;
+	--color-text-secondary			: #697386;
+	--color-muted					: #888984;
+	--color-dark					: #0E1B2C;
+
+	--color-border					: rgba(23, 102, 168, 0.12);
+	--color-border-green			: rgba(7, 134, 95, 0.2);
+
+	/* Template Legacy & Component Aliases */
 	--primary-color					: #1766A8;
 	--secondary-color				: #F5F8FC;
 	--text-color					: #697386;
-	--accent-color					: #438DD5;
+	--accent-color					: #388ADE;
 	--accent-secondary-color		: #1766A8;
-	--brand-blue					: #438DD5;
+	--brand-blue					: #388ADE;
 	--brand-blue-dark				: #1766A8;
 	--brand-green					: #07865F;
-	--brand-green-dark				: #064D3D;
+	--brand-green-dark				: #062C21;
+	--brand-green-light				: #F0F8F5;
 	--brand-orange					: #F2A326;
+	--brand-orange-hover			: #D98E1A;
+	--secondary-green				: #07865F;
 	--bg-color						: #FFFFFF;
 	--white-color					: #FFFFFF;
 	--black-color					: #252B36;
+	--dark-color					: #0E1B2C;
 	--divider-color					: rgba(23, 102, 168, 0.12);
+	--divider-color-green			: rgba(7, 134, 95, 0.2);
 	--dark-divider-color			: rgba(255, 255, 255, 0.15);
 	--error-color					: rgb(230, 87, 87);
 	--default-font					: "Sora", sans-serif;
@@ -472,7 +498,7 @@ a:focus{
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--accent-color);
+    background: var(--color-secondary, #07865F);
 	border-radius: 50%;
     width: 6px;
     height: 6px;
@@ -631,7 +657,24 @@ header.main-header .container-fluid{
 
 .main-menu ul li a:hover,
 .main-menu ul li a:focus{
-	color: var(--accent-color);
+	color: var(--color-secondary, #07865F);
+}
+
+.main-menu ul li.active > a{
+	color: var(--primary-color, #1766A8);
+	font-weight: 600;
+	position: relative;
+}
+
+.main-menu ul li.active > a::after{
+	content: '';
+	position: absolute;
+	bottom: 8px;
+	left: 10px;
+	right: 10px;
+	height: 2px;
+	background: var(--color-secondary, #07865F);
+	border-radius: 2px;
 }
 
 .main-menu ul ul{
@@ -1009,7 +1052,8 @@ header.main-header .container-fluid{
 }
 
 .hero-item.dark-box.box-1 .hero-item-content p span{
-	color: var(--text-color);
+	color: var(--white-color);
+	opacity: 0.9;
 }
 
 .hero-author-image{
@@ -1343,6 +1387,12 @@ header.main-header .container-fluid{
 .service-item.active:before,
 .service-item:hover:before{
 	height: 100%;
+}
+
+.solution-card-item:before,
+.solution-card-item::before{
+	display: none !important;
+	content: none !important;
 }
 
 .service-item-body{
@@ -2469,6 +2519,7 @@ header.main-header .container-fluid{
 
 .faq-accordion .accordion-button:not(.collapsed)::after{
     content: '\f068';
+    background: var(--color-secondary, #07865F);
 }
 
 .faq-accordion .accordion-item .accordion-body{
@@ -4623,7 +4674,7 @@ header.main-header .container-fluid{
 	left: 0;
 	width: 100%;
 	height: 0;
-	background: linear-gradient(90deg, var(--accent-secondary-color) 0%, var(--accent-color) 100%);
+	background: linear-gradient(135deg, var(--color-primary-dark, #1766A8) 0%, var(--color-secondary, #07865F) 100%);
 	transition: all 0.4s ease-in-out;
 }
 
@@ -4634,7 +4685,7 @@ header.main-header .container-fluid{
 
 .contact-info-item .icon-box{
     position: relative;
-    background: var(--primary-color);
+    background: var(--color-secondary, #07865F);
     border-radius: 5px;
     width: 50px;
     height: 50px;

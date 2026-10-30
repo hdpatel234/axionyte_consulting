@@ -1,16 +1,37 @@
 /* Netzon Next.js Global Styles */
 
 :root {
-  /* AXIONYTE Official Brand Palette */
-  --brand-blue: #438DD5;
+  /* Official Extracted AXIONYTE Brand Palette */
+  --color-primary: #388ADE;
+  --color-primary-dark: #1766A8;
+  --color-primary-light: #EBF3FC;
+  --color-secondary: #07865F;
+  --color-secondary-dark: #062C21;
+  --color-secondary-light: #F0F8F5;
+  --color-accent: #F2A326;
+  --color-accent-hover: #D98E1A;
+  --color-background: #FFFFFF;
+  --color-surface: #F5F8FC;
+  --color-surface-green: #F0F8F5;
+  --color-text: #252B36;
+  --color-text-secondary: #697386;
+  --color-muted: #888984;
+  --color-dark: #0E1B2C;
+
+  --color-border: rgba(23, 102, 168, 0.12);
+  --color-border-green: rgba(7, 134, 95, 0.2);
+
+  /* Template Legacy & Component Aliases */
+  --brand-blue: #388ADE;
   --brand-blue-dark: #1766A8;
   --brand-green: #07865F;
-  --brand-green-dark: #064D3D;
+  --brand-green-dark: #062C21;
+  --brand-green-light: #F0F8F5;
   --brand-orange: #F2A326;
   --brand-orange-hover: #D98E1A;
 
   --primary-color: #1766A8;
-  --accent-color: #438DD5;
+  --accent-color: #388ADE;
   --accent-secondary-color: #1766A8;
   --secondary-color: #F5F8FC;
   --secondary-green: #07865F;
@@ -22,6 +43,7 @@
   --white-color: #FFFFFF;
   --dark-color: #0E1B2C;
   --divider-color: rgba(23, 102, 168, 0.12);
+  --divider-color-green: rgba(7, 134, 95, 0.2);
   --dark-divider-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -240,20 +262,42 @@ figure.image-anime.reveal img {
   transform: scale(1) !important;
 }
 
-/* Secondary Hero Button High-Contrast Style */
+/* Secondary Hero Button — Brand Green Style */
 .btn-hero-secondary {
-  background: #ffffff !important;
-  border: 1.5px solid #0e1b2c !important;
-  color: #0e1b2c !important;
+  background: var(--color-secondary, #07865F) !important;
+  border: 1.5px solid var(--color-secondary, #07865F) !important;
+  color: #ffffff !important;
   font-weight: 600 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(7, 134, 95, 0.25) !important;
   transition: all 0.3s ease-in-out !important;
 }
 
 .btn-hero-secondary:hover {
-  background: #0e1b2c !important;
+  background: var(--color-secondary-dark, #062C21) !important;
   color: #ffffff !important;
-  border-color: #0e1b2c !important;
+  border-color: var(--color-secondary-dark, #062C21) !important;
+  box-shadow: 0 8px 24px rgba(7, 134, 95, 0.35) !important;
+}
+
+/* Secondary Green Button Helper */
+.btn-secondary-green {
+  background: var(--color-secondary, #07865F) !important;
+  border: 1.5px solid var(--color-secondary, #07865F) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(7, 134, 95, 0.25) !important;
+  border-radius: 10px !important;
+  padding: 15px 46px 15px 24px !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.btn-secondary-green:hover {
+  background: var(--color-secondary-dark, #062C21) !important;
+  color: #ffffff !important;
+  border-color: var(--color-secondary-dark, #062C21) !important;
+  box-shadow: 0 8px 24px rgba(7, 134, 95, 0.35) !important;
 }
 
 /* Core Strengths / Features Card Styling */
@@ -283,15 +327,15 @@ figure.image-anime.reveal img {
   left: 0 !important;
   right: 0 !important;
   height: 3px !important;
-  background: linear-gradient(90deg, #2563eb, #2ecc71) !important;
+  background: linear-gradient(90deg, var(--color-primary-dark, #1766A8) 0%, var(--color-secondary, #07865F) 100%) !important;
   opacity: 0 !important;
   transition: opacity 0.3s ease !important;
 }
 
 .core-feature-card:hover {
   transform: translateY(-8px) !important;
-  box-shadow: 0 16px 36px rgba(14, 27, 44, 0.08) !important;
-  border-color: rgba(46, 204, 113, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(7, 134, 95, 0.1) !important;
+  border-color: rgba(7, 134, 95, 0.35) !important;
 }
 
 .core-feature-card:hover:before {
@@ -302,19 +346,19 @@ figure.image-anime.reveal img {
   width: 58px;
   height: 58px;
   border-radius: 14px;
-  background: var(--accent-color, #2563eb) !important;
+  background: linear-gradient(135deg, var(--color-primary-dark, #1766A8) 0%, var(--color-primary, #388ADE) 100%) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 22px;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28) !important;
+  box-shadow: 0 6px 18px rgba(23, 102, 168, 0.25) !important;
   transition: all 0.35s ease !important;
 }
 
 .core-feature-card:hover .feature-icon-wrapper {
   transform: scale(1.08) !important;
-  background: var(--primary-color, #0e1b2c) !important;
-  box-shadow: 0 8px 22px rgba(14, 27, 44, 0.28) !important;
+  background: var(--color-secondary, #07865F) !important;
+  box-shadow: 0 8px 22px rgba(7, 134, 95, 0.3) !important;
 }
 
 .core-feature-card .feature-icon-wrapper img {
@@ -324,37 +368,57 @@ figure.image-anime.reveal img {
   filter: brightness(0) invert(1) !important;
 }
 
-/* How It Works icon visibility fix */
 .how-it-work-icon {
   width: 58px;
   height: 58px;
-  border-radius: 50%;
-  background-color: var(--accent-color, #2563eb) !important;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--color-primary-dark, #1766A8) 0%, var(--color-primary, #388ADE) 100%) !important;
+  border: 1px solid rgba(23, 102, 168, 0.25) !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease-in-out;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(23, 102, 168, 0.22);
 }
 
 .how-it-work-icon img {
   width: 26px;
   height: 26px;
   filter: brightness(0) invert(1) !important;
+  transition: transform 0.3s ease;
 }
 
+.how-it-work-item:hover .how-it-work-icon,
+.how-it-work-icon:hover {
+  background: linear-gradient(135deg, var(--color-secondary-dark, #062C21) 0%, var(--color-secondary, #07865F) 100%) !important;
+  border-color: var(--color-secondary, #07865F) !important;
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(7, 134, 95, 0.35);
+}
+
+.how-it-work-item:hover .how-it-work-icon img,
+.how-it-work-icon:hover img {
+  filter: brightness(0) invert(1) !important;
+  transform: scale(1.05);
+}
+
+.how-it-work-item:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 16px 36px rgba(7, 134, 95, 0.1) !important;
+  border-color: rgba(7, 134, 95, 0.35) !important;
+}
 
 .core-feature-card h3 {
   font-size: 20px !important;
   font-weight: 700 !important;
-  color: #0e1b2c !important;
+  color: var(--color-dark, #0E1B2C) !important;
   margin-bottom: 12px !important;
   line-height: 1.35 !important;
 }
 
 .core-feature-card p {
   font-size: 14.5px !important;
-  color: #556070 !important;
+  color: var(--color-text-secondary, #697386) !important;
   line-height: 1.65 !important;
   margin: 0 !important;
 }
@@ -367,16 +431,73 @@ figure.image-anime.reveal img {
 .core-feature-card .feature-link {
   font-size: 13.5px;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--color-primary-dark, #1766A8);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: gap 0.2s ease;
+  transition: gap 0.2s ease, color 0.2s ease;
+  text-decoration: none;
 }
 
 .core-feature-card:hover .feature-link {
-  color: #1d4ed8;
+  color: var(--color-secondary, #07865F);
   gap: 10px;
+}
+
+/* Why Choose Us Box Styling */
+.why-choose-box {
+  background: #ffffff !important;
+  border: 1.5px solid var(--color-border, rgba(23, 102, 168, 0.12)) !important;
+  border-radius: 16px !important;
+  padding: 34px 28px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.why-choose-box:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(7, 134, 95, 0.4) !important;
+  box-shadow: 0 16px 36px rgba(7, 134, 95, 0.09) !important;
+}
+
+.why-choose-icon {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, var(--color-primary-dark, #1766A8) 0%, var(--color-primary, #388ADE) 100%) !important;
+  border: 1px solid rgba(23, 102, 168, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 16px rgba(23, 102, 168, 0.22) !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.why-choose-icon img {
+  width: 26px !important;
+  height: 26px !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.why-choose-box:hover .why-choose-icon,
+.why-choose-icon:hover {
+  background: linear-gradient(135deg, var(--color-secondary-dark, #062C21) 0%, var(--color-secondary, #07865F) 100%) !important;
+  border-color: var(--color-secondary, #07865F) !important;
+  box-shadow: 0 8px 24px rgba(7, 134, 95, 0.35) !important;
+  transform: scale(1.08) !important;
+}
+
+.why-choose-box:hover .why-choose-icon img,
+.why-choose-icon:hover img {
+  filter: brightness(0) invert(1) !important;
+  transform: scale(1.05) !important;
 }
 
 /* Modern Service Card with Featured Image */
@@ -384,7 +505,7 @@ figure.image-anime.reveal img {
   background: #ffffff !important;
   border-radius: 18px !important;
   overflow: hidden !important;
-  border: 1px solid rgba(14, 27, 44, 0.08) !important;
+  border: 1px solid var(--color-border, rgba(23, 102, 168, 0.12)) !important;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04) !important;
   height: 100% !important;
   display: flex !important;
@@ -395,8 +516,8 @@ figure.image-anime.reveal img {
 
 .service-card-modern:hover {
   transform: translateY(-8px) !important;
-  box-shadow: 0 18px 40px rgba(14, 27, 44, 0.1) !important;
-  border-color: rgba(46, 204, 113, 0.4) !important;
+  box-shadow: 0 18px 40px rgba(7, 134, 95, 0.1) !important;
+  border-color: rgba(7, 134, 95, 0.4) !important;
 }
 
 .service-card-image {
@@ -426,8 +547,8 @@ figure.image-anime.reveal img {
   width: 50px !important;
   height: 50px !important;
   border-radius: 12px !important;
-  background: var(--accent-color, #2563eb) !important;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35) !important;
+  background: var(--color-primary-dark, #1766A8) !important;
+  box-shadow: 0 4px 16px rgba(23, 102, 168, 0.35) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -436,9 +557,9 @@ figure.image-anime.reveal img {
 }
 
 .service-card-modern:hover .service-card-icon-badge {
-  background: var(--primary-color, #0e1b2c) !important;
+  background: var(--color-secondary, #07865F) !important;
   transform: scale(1.08) !important;
-  box-shadow: 0 6px 20px rgba(14, 27, 44, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(7, 134, 95, 0.4) !important;
 }
 
 .service-card-icon-badge img {
@@ -472,20 +593,20 @@ figure.image-anime.reveal img {
 }
 
 .service-card-title a {
-  color: #0e1b2c !important;
+  color: var(--color-dark, #0E1B2C) !important;
   text-decoration: none !important;
   transition: color 0.2s ease !important;
 }
 
 .service-card-title a:hover {
-  color: #2563eb !important;
+  color: var(--color-primary-dark, #1766A8) !important;
 }
 
 .service-card-arrow-btn {
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  background: rgba(37, 99, 235, 0.08) !important;
+  background: rgba(23, 102, 168, 0.08) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -501,7 +622,7 @@ figure.image-anime.reveal img {
 }
 
 .service-card-modern:hover .service-card-arrow-btn {
-  background: #2563eb !important;
+  background: var(--color-secondary, #07865F) !important;
   transform: rotate(-45deg) !important;
 }
 
@@ -511,7 +632,7 @@ figure.image-anime.reveal img {
 
 .service-card-desc {
   font-size: 14.5px !important;
-  color: #556070 !important;
+  color: var(--color-text-secondary, #697386) !important;
   line-height: 1.65 !important;
   margin: 0 0 20px 0 !important;
 }
@@ -519,13 +640,13 @@ figure.image-anime.reveal img {
 .service-card-footer {
   margin-top: auto !important;
   padding-top: 16px !important;
-  border-top: 1px solid rgba(14, 27, 44, 0.06) !important;
+  border-top: 1px solid var(--color-border, rgba(23, 102, 168, 0.08)) !important;
 }
 
 .service-card-action {
   font-size: 13.5px !important;
   font-weight: 600 !important;
-  color: #2563eb !important;
+  color: var(--color-primary-dark, #1766A8) !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
@@ -534,8 +655,71 @@ figure.image-anime.reveal img {
 }
 
 .service-card-modern:hover .service-card-action {
-  color: #1d4ed8 !important;
+  color: var(--color-secondary, #07865F) !important;
   gap: 10px !important;
+}
+
+/* Strategic Practice Area Solution Card (/service) */
+.solution-card-item {
+  position: relative !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  border: 1.5px solid var(--divider-color, rgba(14, 27, 44, 0.08)) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03) !important;
+  overflow: hidden !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.solution-card-item::before,
+.solution-card-item::after {
+  display: none !important;
+  content: none !important;
+}
+
+.solution-card-item:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(7, 134, 95, 0.4) !important;
+  box-shadow: 0 16px 36px rgba(7, 134, 95, 0.1) !important;
+  background: #ffffff !important;
+}
+
+.solution-card-item .solution-card-image img {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.solution-card-item:hover .solution-card-image img {
+  transform: scale(1.05) !important;
+}
+
+.solution-card-item .service-btn a {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--color-surface, #F5F8FC) !important;
+  color: var(--color-primary-dark, #1766A8) !important;
+  border: 1px solid rgba(23, 102, 168, 0.15) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.solution-card-item:hover .service-btn a {
+  background: var(--color-secondary, #07865F) !important;
+  color: #ffffff !important;
+  border-color: var(--color-secondary, #07865F) !important;
+  transform: translateX(3px) !important;
+}
+
+.solution-card-item .service-body h3 a {
+  color: var(--color-dark, #0E1B2C) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.solution-card-item:hover .service-body h3 a {
+  color: var(--color-primary-dark, #1766A8) !important;
 }
 
 /* ==========================================================================
@@ -705,6 +889,11 @@ html[data-theme="dark"] .hero-item {
 html[data-theme="dark"] .hero-item.box-1 {
   background: #0d1527 !important;
   border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+.hero-item.dark-box.box-1 .hero-item-content p,
+.hero-item.dark-box.box-1 .hero-item-content p span {
+  color: #ffffff !important;
 }
 
 html[data-theme="dark"] .hero-item.box-2 {
@@ -1145,7 +1334,7 @@ footer.main-footer.compact-footer {
   left: 0;
   width: 30px;
   height: 2.5px;
-  background: var(--brand-blue, #438DD5);
+  background: linear-gradient(90deg, var(--color-primary, #388ADE) 0%, var(--color-secondary, #07865F) 100%);
   border-radius: 2px;
 }
 
@@ -1176,7 +1365,7 @@ footer.main-footer.compact-footer {
 }
 
 .footer-links ul li a:hover {
-  color: #438DD5 !important;
+  color: var(--color-secondary, #07865F) !important;
   transform: translateX(4px);
 }
 
@@ -1198,9 +1387,9 @@ footer.main-footer.compact-footer {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: rgba(67, 141, 213, 0.15);
-  border: 1px solid rgba(67, 141, 213, 0.25);
-  color: #438DD5;
+  background: rgba(7, 134, 95, 0.15);
+  border: 1px solid rgba(7, 134, 95, 0.3);
+  color: var(--color-secondary, #07865F);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1228,7 +1417,7 @@ footer.main-footer.compact-footer {
 }
 
 .contact-value:hover {
-  color: #438DD5 !important;
+  color: var(--color-secondary, #07865F) !important;
 }
 
 .contact-address {

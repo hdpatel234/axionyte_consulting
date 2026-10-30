@@ -19,7 +19,12 @@ export default function PartnersTicker() {
               <img
                 src="/images/icon-asterisk.svg"
                 alt=""
-                style={{ width: "16px", height: "16px" }}
+                style={{
+                  width: "15px",
+                  height: "15px",
+                  filter:
+                    "brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(540%) hue-rotate(115deg) brightness(95%) contrast(92%)",
+                }}
               />
               <span
                 style={{
@@ -50,7 +55,12 @@ export default function PartnersTicker() {
               <img
                 src="/images/icon-asterisk.svg"
                 alt=""
-                style={{ width: "16px", height: "16px" }}
+                style={{
+                  width: "15px",
+                  height: "15px",
+                  filter:
+                    "brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(540%) hue-rotate(115deg) brightness(95%) contrast(92%)",
+                }}
               />
               <span
                 style={{

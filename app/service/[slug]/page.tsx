@@ -684,7 +684,7 @@ export default async function ServiceDetailPage({
                       <Link href="/contact" className="btn-default">
                         Talk with Our Expert
                       </Link>
-                      <a href={COMPANY.phoneLink} className="btn-default btn-highlighted" style={{ color: "#1766A8", borderColor: "#1766A8" }}>
+                      <a href={COMPANY.phoneLink} className="btn-secondary-green">
                         Call {COMPANY.phone}
                       </a>
                     </div>

@@ -38,7 +38,7 @@ export default function HomePage() {
                     </h3>
                     <h1 className="text-anime-style-2" data-cursor="-opaque">
                       Secure Your Digital Future with Intelligent{" "}
-                      <span>Cybersecurity & AI Solutions</span>
+                      <span style={{ color: "var(--color-secondary, #07865F)" }}>Cybersecurity</span> & <span>AI Solutions</span>
                     </h1>
                     <p className="wow fadeInUp" data-wow-delay="0.2s">
                       AXIONYTE Consulting helps organizations strengthen digital security,
@@ -69,7 +69,7 @@ export default function HomePage() {
                   <div className="hero-item box-1 dark-box wow fadeInUp">
                     <div className="hero-item-content">
                       <h3>&ldquo;Cybersecurity is not just tech, it&apos;s about trust &ndash; protecting your data.&rdquo;</h3>
-                      <p>{COMPANY.owner}, <span>{COMPANY.role}</span></p>
+                      <p style={{ color: "#ffffff" }}>{COMPANY.owner}, <span style={{ color: "#ffffff", opacity: 0.9 }}>{COMPANY.role}</span></p>
                     </div>
                     <div className="hero-author-image">
                       <figure className="image-anime">
@@ -133,7 +133,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="hero-item-content">
-                      <h2><span className="counter">500</span>+</h2>
+                      <h2><span className="counter" style={{ color: "var(--color-secondary, #07865F)" }}>500</span>+</h2>
                       <p>Every day, our technology stops, and eliminate 500+ threats.</p>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
               <div className="about-us-content">
                 <div className="section-title">
                   <h2 className="text-effect" data-cursor="-opaque">
-                    Delivering Strategic Cybersecurity & AI Solutions for Resilient Enterprise Growth
+                    Delivering Strategic <span style={{ color: "var(--color-secondary, #07865F)" }}>Cybersecurity</span> & AI Solutions for Resilient Enterprise Growth
                   </h2>
                   <p className="wow fadeInUp">
                     AXIONYTE Consulting is a dedicated consulting advisory specializing in cybersecurity
@@ -225,7 +225,7 @@ export default function HomePage() {
               <div className="section-title">
                 <h3 className="wow fadeInUp">Our Core Practice</h3>
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Comprehensive Services Designed for <span>Security & Intelligence</span>
+                  Comprehensive Services Designed for <span style={{ color: "var(--color-secondary, #07865F)" }}>Security</span> & <span>Intelligence</span>
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
                   We provide specialized consulting services engineered to evaluate organizational risk,
@@ -301,7 +301,7 @@ export default function HomePage() {
                 <div className="section-title">
                   <h3 className="wow fadeInUp">Why Choose Us</h3>
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Strategic Insight, Technical Rigor, and <span>Tailored Execution</span>
+                    Strategic Insight, <span style={{ color: "var(--color-secondary, #07865F)" }}>Technical Rigor</span>, and <span>Tailored Execution</span>
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay="0.2s">
                     AXIONYTE Consulting partners with enterprise leaders to deliver actionable recommendations
@@ -440,7 +440,7 @@ export default function HomePage() {
               <div className="section-title text-center">
                 <h3 className="wow fadeInUp">Core Strengths</h3>
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Engineered for Enterprise <span>Security & Agility</span>
+                  Engineered for Enterprise <span style={{ color: "var(--color-secondary, #07865F)" }}>Security</span> & <span>Agility</span>
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
                   Discover how our tailored consulting capabilities help organizations navigate complexity and achieve digital security.
