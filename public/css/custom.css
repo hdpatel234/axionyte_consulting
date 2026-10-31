@@ -2824,8 +2824,8 @@ header.main-header .container-fluid{
 }
 
 .footer-logo img{
-	width: 100%;
-	max-width: 160px;
+	width: auto;
+	max-width: 290px;
 }
 
 .about-footer-content{

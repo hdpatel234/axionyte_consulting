@@ -72,9 +72,9 @@ export default function Header() {
                   alt={COMPANY.name}
                   className="header-logo-img"
                   style={{
-                    height: "54px",
+                    height: "66px",
                     width: "auto",
-                    maxWidth: "270px",
+                    maxWidth: "320px",
                     objectFit: "contain",
                     display: "block",
                   }}

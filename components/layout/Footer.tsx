@@ -22,9 +22,9 @@ export default function Footer() {
                     alt={COMPANY.name}
                     className="footer-logo-img"
                     style={{
-                      height: "44px",
+                      height: "58px",
                       width: "auto",
-                      maxWidth: "240px",
+                      maxWidth: "290px",
                       objectFit: "contain",
                       display: "block",
                     }}
