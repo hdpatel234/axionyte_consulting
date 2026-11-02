@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMPANY } from "@/lib/company-data";
+import { COMPANY, SHOW_SERVICES } from "@/lib/company-data";
 
 export default function Footer() {
   return (
@@ -55,9 +55,11 @@ export default function Footer() {
                 <li>
                   <Link href="/company">Company</Link>
                 </li>
-                <li>
-                  <Link href="/service">Service</Link>
-                </li>
+                {SHOW_SERVICES && (
+                  <li>
+                    <Link href="/service">Service</Link>
+                  </li>
+                )}
                 <li>
                   <Link href="/partnerships">Partnerships</Link>
                 </li>
@@ -91,7 +93,7 @@ export default function Footer() {
                   <div>
                     <span className="contact-label">Office Address:</span>
                     <address className="contact-address mb-0">
-                      {COMPANY.address.suite}, {COMPANY.address.street},<br />
+                      {COMPANY.address.suite}, {COMPANY.address.street},
                       {COMPANY.address.cityStateZip}, {COMPANY.address.country}
                     </address>
                   </div>

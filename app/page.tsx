@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PartnersTicker from "@/components/common/PartnersTicker";
 import FaqAccordion from "@/components/common/FaqAccordion";
 import {
   COMPANY,
   CORE_SERVICES,
   HOW_IT_WORKS_STEPS,
   FAQS,
-  BLOG_POSTS,
-  SHOW_BLOGS,
 } from "@/lib/company-data";
 
 export const metadata: Metadata = {
@@ -18,19 +15,17 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  // Flag to hide sections per client instructions while preserving code for future use
-  const showPricing = false;
-  const showTestimonials = false;
-
   return (
     <>
-      {/* Hero Section Start */}
+      {/* =========================================================================
+          Section 1: Banner / Hero
+          ========================================================================= */}
       <div className="hero">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="hero-box">
-                {/* Hero Content Start */}
+                {/* Hero Content */}
                 <div className="hero-content">
                   <div className="section-title">
                     <h3 className="wow fadeInUp">
@@ -38,7 +33,10 @@ export default function HomePage() {
                     </h3>
                     <h1 className="text-anime-style-2" data-cursor="-opaque">
                       Secure Your Digital Future with Intelligent{" "}
-                      <span style={{ color: "var(--color-secondary, #07865F)" }}>Cybersecurity</span> & <span>AI Solutions</span>
+                      <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                        Cybersecurity
+                      </span>{" "}
+                      &amp; <span>AI Solutions</span>
                     </h1>
                     <p className="wow fadeInUp" data-wow-delay="0.2s">
                       AXIONYTE Consulting helps organizations strengthen digital security,
@@ -48,7 +46,6 @@ export default function HomePage() {
                   </div>
 
                   <div className="hero-body wow fadeInUp" data-wow-delay="0.4s">
-                    {/* Action Buttons: Removed 'Get Started' and 'Watch Our Video' */}
                     <div className="hero-btn">
                       <Link href="/contact" className="btn-default">
                         Talk with Our Expert
@@ -56,90 +53,148 @@ export default function HomePage() {
                     </div>
                     <div className="hero-btn ms-sm-3 mt-2 mt-sm-0">
                       <Link href="/service" className="btn-default btn-hero-secondary">
-                        Explore Service
+                        Explore Services
                       </Link>
                     </div>
                   </div>
                 </div>
-                {/* Hero Content End */}
 
-                {/* Hero Item List Start */}
+                {/* Hero Item List - Technology-Focused Visuals (Zero Humans) */}
                 <div className="hero-item-list">
-                  {/* Hero Box 1 Start */}
+                  {/* Hero Box 1: Owner Trust Statement */}
                   <div className="hero-item box-1 dark-box wow fadeInUp">
                     <div className="hero-item-content">
-                      <h3>&ldquo;Cybersecurity is not just tech, it&apos;s about trust &ndash; protecting your data.&rdquo;</h3>
-                      <p style={{ color: "#ffffff" }}>{COMPANY.owner}, <span style={{ color: "#ffffff", opacity: 0.9 }}>{COMPANY.role}</span></p>
+                      <h3>
+                        &ldquo;Cybersecurity is not just tech, it&apos;s about trust &ndash; protecting your data.&rdquo;
+                      </h3>
+                      <p style={{ color: "#ffffff" }}>
+                        {COMPANY.owner},{" "}
+                        <span style={{ color: "#ffffff", opacity: 0.9 }}>{COMPANY.role}</span>
+                      </p>
                     </div>
                     <div className="hero-author-image">
                       <figure className="image-anime">
-                        <img src="/images/hero-author-image.jpg" alt={COMPANY.owner} />
+                        <img
+                          src="/images/hero-cyber-trust.jpg"
+                          alt="AXIONYTE Cybersecurity &amp; Data Trust"
+                        />
                       </figure>
                     </div>
                   </div>
-                  {/* Hero Box 1 End */}
 
-                  {/* Hero Box 2 Start */}
+                  {/* Hero Box 2: Counter */}
                   <div className="hero-item box-2 dark-box wow fadeInUp" data-wow-delay="0.2s">
                     <div className="hero-counter hero-item-content">
-                      <h2><span className="counter">15</span>K+</h2>
+                      <h2>
+                        <span className="counter">15</span>K+
+                      </h2>
                     </div>
                     <div className="hero-item-content">
                       <h3>Empowering businesses</h3>
                       <p>Our experts combine advanced technology with years</p>
                     </div>
                   </div>
-                  {/* Hero Box 2 End */}
 
-                  {/* Hero Box 3 Start */}
+                  {/* Hero Box 3: Enterprise Technology Assurance */}
                   <div className="hero-item box-3 wow fadeInUp" data-wow-delay="0.4s">
                     <div className="hero-client-box">
-                      {/* Satisfy Client Images Start */}
-                      <div className="satisfy-client-images">
-                        <div className="satisfy-client-image">
-                          <figure className="image-anime">
-                            <img src="/images/author-1.jpg" alt="Client 1" />
-                          </figure>
+                      {/* Enterprise Technology Badges (Zero humans) */}
+                      <div
+                        className="satisfy-client-images"
+                        style={{ display: "flex", alignItems: "center", paddingLeft: "8px" }}
+                      >
+                        <div
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "50%",
+                            background: "rgba(7, 134, 95, 0.15)",
+                            border: "2px solid #ffffff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "var(--color-secondary, #07865F)",
+                            fontSize: "13px",
+                            marginLeft: "-8px",
+                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                          }}
+                        >
+                          <i className="fa-solid fa-shield-halved"></i>
                         </div>
-                        <div className="satisfy-client-image">
-                          <figure className="image-anime">
-                            <img src="/images/author-2.jpg" alt="Client 2" />
-                          </figure>
+                        <div
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "50%",
+                            background: "rgba(14, 27, 44, 0.12)",
+                            border: "2px solid #ffffff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "var(--color-primary, #0E1B2C)",
+                            fontSize: "13px",
+                            marginLeft: "-8px",
+                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                          }}
+                        >
+                          <i className="fa-solid fa-lock"></i>
                         </div>
-                        <div className="satisfy-client-image">
-                          <figure className="image-anime">
-                            <img src="/images/author-3.jpg" alt="Client 3" />
-                          </figure>
+                        <div
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "50%",
+                            background: "rgba(242, 163, 38, 0.18)",
+                            border: "2px solid #ffffff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "var(--color-accent, #F2A326)",
+                            fontSize: "13px",
+                            marginLeft: "-8px",
+                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                          }}
+                        >
+                          <i className="fa-solid fa-microchip"></i>
                         </div>
-                        <div className="satisfy-client-image">
-                          <figure className="image-anime">
-                            <img src="/images/author-4.jpg" alt="Client 4" />
-                          </figure>
-                        </div>
-                        <div className="satisfy-client-image">
-                          <figure className="image-anime">
-                            <img src="/images/author-5.jpg" alt="Client 5" />
-                          </figure>
+                        <div
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "50%",
+                            background: "rgba(7, 134, 95, 0.15)",
+                            border: "2px solid #ffffff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "var(--color-secondary, #07865F)",
+                            fontSize: "13px",
+                            marginLeft: "-8px",
+                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                          }}
+                        >
+                          <i className="fa-solid fa-network-wired"></i>
                         </div>
                       </div>
-                      {/* Satisfy Client Images End */}
 
-                      {/* Client Content Start */}
                       <div className="hero-client-content hero-item-content">
                         <h3>15K+ Satisfied Clients</h3>
                         <p>Our experts combine advanced technology with years</p>
                       </div>
-                      {/* Client Content End */}
                     </div>
 
                     <div className="hero-item-content">
-                      <h2><span className="counter" style={{ color: "var(--color-secondary, #07865F)" }}>500</span>+</h2>
+                      <h2>
+                        <span className="counter" style={{ color: "var(--color-secondary, #07865F)" }}>
+                          500
+                        </span>
+                        +
+                      </h2>
                       <p>Every day, our technology stops, and eliminate 500+ threats.</p>
                     </div>
                   </div>
-                  {/* Hero Box 3 End */}
 
-                  {/* Hero Box 4 Start */}
+                  {/* Hero Box 4: Security Features */}
                   <div className="hero-item box-4 dark-box wow fadeInUp" data-wow-delay="0.6s">
                     <div className="hero-item-content">
                       <h3>Empowering businesses to grow smarter, move faster, and stay secure.</h3>
@@ -147,28 +202,24 @@ export default function HomePage() {
 
                     <div className="hero-item-image">
                       <figure>
-                        <img src="/images/hero-item-image.png" alt="Cloud Security & Smart Defense" />
+                        <img src="/images/hero-item-image.png" alt="Cloud Security &amp; Smart Defense" />
                       </figure>
                     </div>
                   </div>
-                  {/* Hero Box 4 End */}
                 </div>
-                {/* Hero Item List End */}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* Hero Section End */}
 
-      {/* Moving Band / Marquee (Industries Served) */}
-      <PartnersTicker />
-
-      {/* About Us Section Start */}
+      {/* =========================================================================
+          Section 2: About Us
+          ========================================================================= */}
       <div className="about-us">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-xl-5">
+            <div className="col-xl-5 col-lg-5">
               <div className="about-image-box">
                 <div className="section-sub-title">
                   <h3 className="wow fadeInUp">About AXIONYTE Consulting</h3>
@@ -177,19 +228,23 @@ export default function HomePage() {
                 <div className="about-us-image">
                   <figure className="image-anime reveal">
                     <img
-                      src="/images/about-us-image.jpg"
-                      alt="AXIONYTE Consulting"
+                      src="/images/about-us-tech-security.jpg"
+                      alt="AXIONYTE Consulting - Cybersecurity and AI Advisory"
                     />
                   </figure>
                 </div>
               </div>
             </div>
 
-            <div className="col-xl-7">
+            <div className="col-xl-7 col-lg-7">
               <div className="about-us-content">
                 <div className="section-title">
                   <h2 className="text-effect" data-cursor="-opaque">
-                    Delivering Strategic <span style={{ color: "var(--color-secondary, #07865F)" }}>Cybersecurity</span> & AI Solutions for Resilient Enterprise Growth
+                    Delivering Strategic{" "}
+                    <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                      Cybersecurity
+                    </span>{" "}
+                    &amp; AI Solutions for Resilient Enterprise Growth
                   </h2>
                   <p className="wow fadeInUp">
                     AXIONYTE Consulting is a dedicated consulting advisory specializing in cybersecurity
@@ -215,9 +270,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* About Us Section End */}
 
-      {/* Our Services Section Start */}
+      {/* =========================================================================
+          Section 3: Services
+          ========================================================================= */}
       <div className="our-services">
         <div className="container">
           <div className="row section-row align-items-center">
@@ -225,7 +281,11 @@ export default function HomePage() {
               <div className="section-title">
                 <h3 className="wow fadeInUp">Our Core Practice</h3>
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Comprehensive Services Designed for <span style={{ color: "var(--color-secondary, #07865F)" }}>Security</span> & <span>Intelligence</span>
+                  Comprehensive Services Designed for{" "}
+                  <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                    Security
+                  </span>{" "}
+                  &amp; <span>Intelligence</span>
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
                   We provide specialized consulting services engineered to evaluate organizational risk,
@@ -289,19 +349,23 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* Our Services Section End */}
 
-      {/* Why Choose Us Section Start */}
+      {/* =========================================================================
+          Section 4: Why Choose Us
+          ========================================================================= */}
       <div className="why-choose-us">
         <div className="container">
           <div className="row align-items-center">
-            {/* Rebalanced layout without removed images */}
             <div className="col-lg-12">
               <div className="why-choose-content">
                 <div className="section-title">
                   <h3 className="wow fadeInUp">Why Choose Us</h3>
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Strategic Insight, <span style={{ color: "var(--color-secondary, #07865F)" }}>Technical Rigor</span>, and <span>Tailored Execution</span>
+                    Strategic Insight,{" "}
+                    <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                      Technical Rigor
+                    </span>
+                    , and <span>Tailored Execution</span>
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay="0.2s">
                     AXIONYTE Consulting partners with enterprise leaders to deliver actionable recommendations
@@ -317,7 +381,9 @@ export default function HomePage() {
                         <img src="/images/icon-why-choose-1.svg" alt="Direct Expert Advisory" />
                       </div>
                       <h3>Direct Expert Advisory</h3>
-                      <p>Collaborate directly with senior leadership and experienced practitioners on your specific security and AI objectives.</p>
+                      <p>
+                        Collaborate directly with senior leadership and experienced practitioners on your specific security and AI objectives.
+                      </p>
                     </div>
                   </div>
 
@@ -327,17 +393,21 @@ export default function HomePage() {
                         <img src="/images/icon-why-choose-2.svg" alt="Pragmatic Frameworks" />
                       </div>
                       <h3>Pragmatic Frameworks</h3>
-                      <p>We deliver prioritized, actionable roadmaps rather than generic boilerplate reports, optimizing your resources.</p>
+                      <p>
+                        We deliver prioritized, actionable roadmaps rather than generic boilerplate reports, optimizing your resources.
+                      </p>
                     </div>
                   </div>
 
                   <div className="col-md-4 mb-4">
                     <div className="why-choose-box wow fadeInUp" data-wow-delay="0.4s">
                       <div className="why-choose-icon mb-3">
-                        <img src="/images/icon-why-choose-1.svg" alt="Security & AI Synergy" />
+                        <img src="/images/icon-why-choose-1.svg" alt="Security &amp; AI Synergy" />
                       </div>
-                      <h3>Security & AI Synergy</h3>
-                      <p>Unified guidance that balances proactive threat defense with intelligent process enablement.</p>
+                      <h3>Security &amp; AI Synergy</h3>
+                      <p>
+                        Unified guidance that balances proactive threat defense with intelligent process enablement.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -352,9 +422,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* Why Choose Us Section End */}
 
-      {/* How It Works Section Start */}
+      {/* =========================================================================
+          Section 5: Consulting Methodology
+          ========================================================================= */}
       <div className="how-it-work">
         <div className="container">
           <div className="row section-row align-items-center">
@@ -371,7 +442,6 @@ export default function HomePage() {
             </div>
 
             <div className="col-lg-4 text-lg-end">
-              {/* Phone call prompt replacing review badge */}
               <div className="how-it-work-contact wow fadeInUp" data-wow-delay="0.3s">
                 <p style={{ color: "#9ea4b5", marginBottom: "4px", fontSize: "14px" }}>
                   Talk to Our Expert:
@@ -381,7 +451,7 @@ export default function HomePage() {
                   style={{
                     fontSize: "20px",
                     fontWeight: 700,
-                    color: "var(--brand-blue, #438DD5)",
+                    color: "var(--brand-blue, #0E1B2C)",
                     textDecoration: "none",
                     display: "inline-flex",
                     alignItems: "center",
@@ -430,9 +500,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* How It Works Section End */}
 
-      {/* Our Features Section Start */}
+      {/* =========================================================================
+          Section 6: Core Strength
+          ========================================================================= */}
       <div className="our-features">
         <div className="container">
           <div className="row section-row">
@@ -440,7 +511,11 @@ export default function HomePage() {
               <div className="section-title text-center">
                 <h3 className="wow fadeInUp">Core Strengths</h3>
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Engineered for Enterprise <span style={{ color: "var(--color-secondary, #07865F)" }}>Security</span> & <span>Agility</span>
+                  Engineered for Enterprise{" "}
+                  <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                    Security
+                  </span>{" "}
+                  &amp; <span>Agility</span>
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
                   Discover how our tailored consulting capabilities help organizations navigate complexity and achieve digital security.
@@ -512,20 +587,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* Our Features Section End */}
 
-      {/* Pricing Plan Section — Preserved in code, hidden per client instructions */}
-      {showPricing && (
-        <div className="our-pricing">
-          <div className="container">
-            <div className="section-title text-center">
-              <h2>Service Plans</h2>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Frequently Asked Questions Section Start */}
+      {/* =========================================================================
+          Section 7: FAQ
+          ========================================================================= */}
       <div className="our-faqs">
         <div className="container">
           <div className="row section-row align-items-center">
@@ -552,89 +617,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* Frequently Asked Questions Section End */}
-
-      {/* Testimonials Section — Preserved in code, hidden per client instructions (No unverified reviews) */}
-      {showTestimonials && (
-        <div className="our-testimonials">
-          <div className="container">
-            <div className="section-title text-center">
-              <h2>Client Feedback</h2>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Recent Blogs Preview Section Start - Conditional via SHOW_BLOGS flag */}
-      {SHOW_BLOGS && (
-        <div className="our-blog">
-          <div className="container">
-            <div className="row section-row align-items-center">
-              <div className="col-lg-8">
-                <div className="section-title">
-                  <h3 className="wow fadeInUp">Latest Insights</h3>
-                  <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Articles on <span>Cybersecurity & AI Strategy</span>
-                  </h2>
-                  <p className="wow fadeInUp" data-wow-delay="0.2s">
-                    Explore our latest editorial analyses on securing digital infrastructure, evaluating AI safety, and modern risk governance.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 text-lg-end">
-                <div className="section-btn wow fadeInUp" data-wow-delay="0.3s">
-                  <Link href="/blogs" className="btn-default">
-                    View All Articles
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              {BLOG_POSTS.map((post, idx) => (
-                <div className="col-lg-4 col-md-6 mb-4" key={post.slug}>
-                  <div
-                    className="blog-item wow fadeInUp"
-                    data-wow-delay={`${0.15 * (idx + 1)}s`}
-                  >
-                    <div className="blog-featured-image">
-                      <figure className="image-anime">
-                        <Link href={`/blogs/${post.slug}`}>
-                          <img src={post.image} alt={post.title} />
-                        </Link>
-                      </figure>
-                      <div className="blog-date">
-                        <p>{post.date}</p>
-                      </div>
-                    </div>
-
-                    <div className="blog-content">
-                      <div className="blog-content-header">
-                        <span className="badge mb-2" style={{ backgroundColor: "rgba(67,141,213,0.12)", color: "#1766A8", padding: "4px 10px", borderRadius: "4px", fontSize: "12px" }}>
-                          {post.category}
-                        </span>
-                        <h3>
-                          <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
-                        </h3>
-                      </div>
-
-                      <p>{post.excerpt}</p>
-
-                      <div className="blog-btn">
-                        <Link href={`/blogs/${post.slug}`} className="readmore-btn">
-                          Read Article <i className="fa-solid fa-arrow-right ms-1"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-      {/* Recent Blogs Preview Section End */}
     </>
   );
 }

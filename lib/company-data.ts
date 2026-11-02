@@ -9,10 +9,10 @@ export const COMPANY = {
   email: "info@axionyte.com", // placeholder if needed, primary contact is phone & form
   address: {
     suite: "1011, Ratnanjali Solitair",
-    street: "Prernatirth Derasar Road, S.A.C.",
-    cityStateZip: "Ahmedabad, Gujarat – 380015",
+    street: "Prernatirth Derasar Road, S.A.C. ",
+    cityStateZip: " Ahmedabad, Gujarat – 380015",
     country: "India",
-    full: "1011, Ratnanjali Solitair, Prernatirth Derasar Road, S.A.C., Ahmedabad, Gujarat – 380015, India",
+    full: "1011, Ratnanjali Solitair, Prernatirth Derasar Road, S.A.C.,Ahmedabad, Gujarat – 380015, India",
   },
   mapEmbedUrl:
     "https://maps.google.com/maps?q=Ratnanjali+Solitair+Prernatirth+Derasar+Road+Ahmedabad+Gujarat+380015&t=&z=15&ie=UTF8&iwloc=&output=embed",
@@ -21,11 +21,12 @@ export const COMPANY = {
 };
 
 export const SHOW_BLOGS = false;
+export const SHOW_SERVICES = false;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Company", href: "/company" },
-  { label: "Service", href: "/service" },
+  ...(SHOW_SERVICES ? [{ label: "Service", href: "/service" }] : []),
   { label: "Partnerships", href: "/partnerships" },
   ...(SHOW_BLOGS ? [{ label: "Blogs", href: "/blogs" }] : []),
   { label: "Contact Us", href: "/contact" },
@@ -33,13 +34,101 @@ export const NAV_LINKS = [
 
 export const INDUSTRIES_SERVED = [
   "Information Technology",
-  "Financial Services",
+  "Banking & Financial Services",
   "Healthcare",
   "Manufacturing",
   "Retail & E-commerce",
   "Professional Services",
+  "Education",
   "Enterprise Organizations",
 ];
+
+export interface IndustryDetail {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const INDUSTRIES_DETAILS: IndustryDetail[] = [
+  {
+    id: "it",
+    title: "Information Technology",
+    description:
+      "Supporting technology organizations with cybersecurity strategies, digital protection, and intelligent technology adoption.",
+    icon: "fa-solid fa-laptop-code",
+  },
+  {
+    id: "banking-finance",
+    title: "Banking & Financial Services",
+    description:
+      "Supporting financial organizations with security-focused approaches, risk awareness, and digital transformation.",
+    icon: "fa-solid fa-landmark",
+  },
+  {
+    id: "healthcare",
+    title: "Healthcare",
+    description:
+      "Helping healthcare organizations strengthen digital security and protect sensitive information.",
+    icon: "fa-solid fa-heart-pulse",
+  },
+  {
+    id: "manufacturing",
+    title: "Manufacturing",
+    description:
+      "Supporting manufacturing businesses with technology security, operational resilience, and intelligent automation.",
+    icon: "fa-solid fa-industry",
+  },
+  {
+    id: "retail-ecommerce",
+    title: "Retail & E-commerce",
+    description:
+      "Helping retail businesses improve digital security and build more reliable digital operations.",
+    icon: "fa-solid fa-cart-shopping",
+  },
+  {
+    id: "professional-services",
+    title: "Professional Services",
+    description:
+      "Supporting professional organizations with cybersecurity consulting and AI-driven business improvements.",
+    icon: "fa-solid fa-briefcase",
+  },
+  {
+    id: "education",
+    title: "Education",
+    description:
+      "Helping educational institutions strengthen digital environments and explore responsible AI adoption.",
+    icon: "fa-solid fa-graduation-cap",
+  },
+  {
+    id: "enterprise",
+    title: "Enterprise Organizations",
+    description:
+      "Supporting organizations with cybersecurity strategy, technology consulting, and digital transformation.",
+    icon: "fa-solid fa-building",
+  },
+];
+
+export interface PartnerItem {
+  id: string;
+  name: string;
+  logo?: string;
+  websiteUrl?: string;
+  category: "oem" | "strategic";
+  description?: string;
+}
+
+/**
+ * OEM Partners: Original Equipment Manufacturers & technology providers.
+ * Kept ready for client-supplied OEM partner information & approved logo assets.
+ */
+export const OEM_PARTNERS: PartnerItem[] = [];
+
+/**
+ * Strategic Partners: Systems integrators, solution specialists & consulting practices.
+ * Kept ready for client-supplied Strategic partner information & approved logo assets.
+ */
+export const STRATEGIC_PARTNERS: PartnerItem[] = [];
 
 export const CORE_SERVICES = [
   {

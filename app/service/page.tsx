@@ -107,7 +107,7 @@ export default function ServicePage() {
                     <div className="service-header d-flex justify-content-between align-items-center mb-3">
                       <span
                         style={{
-                          color: "var(--brand-blue, #438DD5)",
+                          color: "var(--brand-blue, #0E1B2C)",
                           fontSize: "13px",
                           fontWeight: 700,
                           textTransform: "uppercase",
@@ -235,12 +235,19 @@ export default function ServicePage() {
       </div>
 
       {/* Consultation Banner */}
-      <div className="cta-box text-center" style={{ padding: "80px 0", backgroundColor: "#0e1b2c" }}>
+      <div
+        className="cta-box text-center"
+        style={{
+          padding: "80px 0",
+          backgroundColor: "#ffffff",
+          borderTop: "1px solid rgba(14, 27, 44, 0.08)",
+        }}
+      >
         <div className="container">
-          <h2 style={{ color: "#ffffff", marginBottom: "16px" }}>
+          <h2 style={{ color: "#0E1B2C", marginBottom: "16px", fontWeight: 700 }}>
             Align Your Organization with Resilient Architecture
           </h2>
-          <p style={{ color: "#9ea4b5", maxWidth: "600px", margin: "0 auto 30px" }}>
+          <p style={{ color: "#556070", maxWidth: "600px", margin: "0 auto 30px" }}>
             Connect with {COMPANY.name} to discuss how our tailored cybersecurity and AI services can meet your operational objectives.
           </p>
           <div className="d-flex justify-content-center gap-3 flex-wrap">

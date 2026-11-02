@@ -17,9 +17,9 @@ export default function PartnershipsPage() {
       title: "Vendor-Neutral Advisory",
       description:
         "We evaluate enterprise architectures objectively based on genuine risk posture and mission requirements, ensuring recommendations remain independent.",
-      color: "#1766A8",
-      bgColor: "rgba(23, 102, 168, 0.1)",
-      borderColor: "rgba(23, 102, 168, 0.2)",
+      color: "#0E1B2C",
+      bgColor: "rgba(14, 27, 44, 0.08)",
+      borderColor: "rgba(14, 27, 44, 0.15)",
     },
     {
       icon: "fa-solid fa-microchip",
@@ -202,8 +202,8 @@ export default function PartnershipsPage() {
                 style={{
                   background: "#ffffff",
                   borderRadius: "16px",
-                  border: "1.5px solid rgba(23, 102, 168, 0.22)",
-                  boxShadow: "0 10px 30px rgba(23, 102, 168, 0.06)",
+                  border: "1.5px solid rgba(14, 27, 44, 0.15)",
+                  boxShadow: "0 10px 30px rgba(14, 27, 44, 0.06)",
                   position: "relative",
                   overflow: "hidden",
                   display: "flex",
@@ -219,7 +219,7 @@ export default function PartnershipsPage() {
                     left: 0,
                     right: 0,
                     height: "4px",
-                    background: "linear-gradient(90deg, #1766A8 0%, #438DD5 100%)",
+                    background: "linear-gradient(90deg, #0E1B2C 0%, #172B44 100%)",
                   }}
                 />
 
@@ -229,12 +229,12 @@ export default function PartnershipsPage() {
                       width: "56px",
                       height: "56px",
                       borderRadius: "14px",
-                      background: "rgba(23, 102, 168, 0.1)",
-                      border: "1px solid rgba(23, 102, 168, 0.2)",
+                      background: "rgba(14, 27, 44, 0.08)",
+                      border: "1px solid rgba(14, 27, 44, 0.15)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "#1766A8",
+                      color: "#0E1B2C",
                       fontSize: "24px",
                     }}
                   >
@@ -242,25 +242,25 @@ export default function PartnershipsPage() {
                   </div>
                   <span
                     style={{
-                      background: "rgba(23, 102, 168, 0.08)",
-                      color: "#1766A8",
+                      background: "rgba(14, 27, 44, 0.08)",
+                      color: "#0E1B2C",
                       fontSize: "12px",
                       fontWeight: 700,
                       textTransform: "uppercase",
                       letterSpacing: "0.8px",
                       padding: "5px 14px",
                       borderRadius: "20px",
-                      border: "1px solid rgba(23, 102, 168, 0.2)",
+                      border: "1px solid rgba(14, 27, 44, 0.15)",
                     }}
                   >
                     Technology Alliances
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: "24px", fontWeight: 700, color: "#1766A8", marginBottom: "8px" }}>
+                <h3 style={{ fontSize: "24px", fontWeight: 700, color: "#0E1B2C", marginBottom: "8px" }}>
                   OEM Technology Alliances
                 </h3>
-                <p style={{ fontSize: "14px", fontWeight: 600, color: "var(--brand-blue, #438DD5)", marginBottom: "14px" }}>
+                <p style={{ fontSize: "14px", fontWeight: 600, color: "var(--brand-blue, #0E1B2C)", marginBottom: "14px" }}>
                   For Cybersecurity & AI Software / Hardware Vendors
                 </p>
                 <p style={{ color: "var(--text-color, #252B36)", fontSize: "15px", lineHeight: "1.7", marginBottom: "22px" }}>
@@ -286,7 +286,7 @@ export default function PartnershipsPage() {
                       >
                         <i
                           className="fa-solid fa-circle-check"
-                          style={{ color: "#1766A8", fontSize: "15px", flexShrink: 0 }}
+                          style={{ color: "#0E1B2C", fontSize: "15px", flexShrink: 0 }}
                         ></i>
                         <span>{point}</span>
                       </li>
@@ -296,7 +296,7 @@ export default function PartnershipsPage() {
 
                 <div
                   style={{
-                    borderTop: "1px solid rgba(23, 102, 168, 0.15)",
+                    borderTop: "1px solid rgba(14, 27, 44, 0.1)",
                     paddingTop: "20px",
                     display: "flex",
                     alignItems: "center",
@@ -500,7 +500,7 @@ export default function PartnershipsPage() {
                       style={{
                         fontSize: "26px",
                         fontWeight: 800,
-                        color: "var(--brand-blue, #438DD5)",
+                        color: "var(--brand-blue, #0E1B2C)",
                         letterSpacing: "-0.5px",
                         fontFamily: "var(--font-sora), sans-serif",
                       }}
@@ -512,11 +512,11 @@ export default function PartnershipsPage() {
                         width: "40px",
                         height: "40px",
                         borderRadius: "10px",
-                        backgroundColor: "rgba(67, 141, 213, 0.1)",
+                        backgroundColor: "rgba(14, 27, 44, 0.08)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "var(--brand-blue, #438DD5)",
+                        color: "var(--brand-blue, #0E1B2C)",
                         fontSize: "17px",
                       }}
                     >
@@ -542,7 +542,7 @@ export default function PartnershipsPage() {
         style={{
           padding: "60px 0",
           background: "linear-gradient(135deg, #0E1B2C 0%, #172B44 100%)",
-          borderTop: "1px solid rgba(67, 141, 213, 0.2)",
+          borderTop: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         <div className="container">
@@ -551,15 +551,15 @@ export default function PartnershipsPage() {
               <span
                 style={{
                   display: "inline-block",
-                  background: "rgba(67, 141, 213, 0.15)",
-                  color: "var(--brand-blue, #438DD5)",
+                  background: "rgba(242, 163, 38, 0.15)",
+                  color: "#F2A326",
                   fontSize: "12px",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "1px",
                   padding: "5px 16px",
                   borderRadius: "20px",
-                  border: "1px solid rgba(67, 141, 213, 0.3)",
+                  border: "1px solid rgba(242, 163, 38, 0.3)",
                   marginBottom: "16px",
                 }}
               >

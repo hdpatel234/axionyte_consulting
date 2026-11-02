@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/common/ContactForm";
-import PartnersTicker from "@/components/common/PartnersTicker";
 import { COMPANY } from "@/lib/company-data";
 
 export const metadata: Metadata = {
@@ -38,9 +37,6 @@ export default function ContactPage() {
       </div>
       {/* Page Header Section End */}
 
-      {/* Industries Marquee */}
-      <PartnersTicker />
-
       {/* Page Contact Us Start */}
       <div className="page-contact-us">
         <div className="container">
@@ -73,7 +69,7 @@ export default function ContactPage() {
                     <h3>Office Address</h3>
                     <p style={{ lineHeight: "1.5" }}>
                       {COMPANY.address.suite},<br />
-                      {COMPANY.address.street},<br />
+                      {COMPANY.address.street},
                       {COMPANY.address.cityStateZip}
                     </p>
                   </div>

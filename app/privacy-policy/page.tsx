@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PartnersTicker from "@/components/common/PartnersTicker";
 import { COMPANY } from "@/lib/company-data";
 
 export const metadata: Metadata = {
@@ -34,8 +33,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </div>
-
-      <PartnersTicker />
 
       <div className="page-content py-5">
         <div className="container">

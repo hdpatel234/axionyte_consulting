@@ -48,14 +48,14 @@
 
 :root{
 	/* Official Extracted AXIONYTE Brand Palette */
-	--color-primary					: #388ADE;
-	--color-primary-dark			: #1766A8;
-	--color-primary-light			: #EBF3FC;
+	--color-primary					: #0E1B2C;
+	--color-primary-dark			: #08121E;
+	--color-primary-light			: #F0F4F8;
 	--color-secondary				: #07865F;
 	--color-secondary-dark			: #062C21;
 	--color-secondary-light			: #F0F8F5;
-	--color-accent					: #F2A326;
-	--color-accent-hover			: #D98E1A;
+	--color-accent					: #172B44;
+	--color-accent-hover			: #08121E;
 	--color-background				: #FFFFFF;
 	--color-surface					: #F5F8FC;
 	--color-surface-green			: #F0F8F5;
@@ -64,17 +64,17 @@
 	--color-muted					: #888984;
 	--color-dark					: #0E1B2C;
 
-	--color-border					: rgba(23, 102, 168, 0.12);
+	--color-border					: rgba(14, 27, 44, 0.12);
 	--color-border-green			: rgba(7, 134, 95, 0.2);
 
 	/* Template Legacy & Component Aliases */
-	--primary-color					: #1766A8;
+	--primary-color					: #0E1B2C;
 	--secondary-color				: #F5F8FC;
 	--text-color					: #697386;
-	--accent-color					: #388ADE;
-	--accent-secondary-color		: #1766A8;
-	--brand-blue					: #388ADE;
-	--brand-blue-dark				: #1766A8;
+	--accent-color					: #172B44;
+	--accent-secondary-color		: #0E1B2C;
+	--brand-blue					: #0E1B2C;
+	--brand-blue-dark				: #08121E;
 	--brand-green					: #07865F;
 	--brand-green-dark				: #062C21;
 	--brand-green-light				: #F0F8F5;
@@ -85,7 +85,7 @@
 	--white-color					: #FFFFFF;
 	--black-color					: #252B36;
 	--dark-color					: #0E1B2C;
-	--divider-color					: rgba(23, 102, 168, 0.12);
+	--divider-color					: rgba(14, 27, 44, 0.12);
 	--divider-color-green			: rgba(7, 134, 95, 0.2);
 	--dark-divider-color			: rgba(255, 255, 255, 0.15);
 	--error-color					: rgb(230, 87, 87);
@@ -661,7 +661,7 @@ header.main-header .container-fluid{
 }
 
 .main-menu ul li.active > a{
-	color: var(--primary-color, #1766A8);
+	color: var(--primary-color, #0E1B2C);
 	font-weight: 600;
 	position: relative;
 }
@@ -4674,7 +4674,7 @@ header.main-header .container-fluid{
 	left: 0;
 	width: 100%;
 	height: 0;
-	background: linear-gradient(135deg, var(--color-primary-dark, #1766A8) 0%, var(--color-secondary, #07865F) 100%);
+	background: linear-gradient(135deg, var(--color-primary-dark, #08121E) 0%, var(--color-secondary, #07865F) 100%);
 	transition: all 0.4s ease-in-out;
 }
 

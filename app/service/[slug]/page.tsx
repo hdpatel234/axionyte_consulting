@@ -448,7 +448,7 @@ export default async function ServiceDetailPage({
                       fontSize: "20px",
                       fontWeight: 700,
                       marginBottom: "20px",
-                      color: "var(--primary-color, #1766A8)",
+                      color: "var(--primary-color, #0E1B2C)",
                     }}
                   >
                     Our Service Offerings
@@ -471,7 +471,7 @@ export default async function ServiceDetailPage({
                               display: "flex",
                               justifyContent: "space-between",
                               alignItems: "center",
-                              color: isCurrent ? "var(--brand-blue, #438DD5)" : "var(--text-color, #252B36)",
+                              color: isCurrent ? "var(--brand-blue, #0E1B2C)" : "var(--text-color, #252B36)",
                               fontWeight: isCurrent ? 700 : 500,
                               fontSize: "15px",
                               textDecoration: "none",
@@ -482,7 +482,7 @@ export default async function ServiceDetailPage({
                               className="fa-solid fa-arrow-right"
                               style={{
                                 fontSize: "12px",
-                                color: isCurrent ? "var(--brand-blue, #438DD5)" : "#9ea4b5",
+                                color: isCurrent ? "var(--brand-blue, #0E1B2C)" : "#9ea4b5",
                               }}
                             ></i>
                           </Link>
@@ -497,7 +497,7 @@ export default async function ServiceDetailPage({
                   className="sidebar-cta-box wow fadeInUp"
                   data-wow-delay="0.25s"
                   style={{
-                    background: "linear-gradient(145deg, #1766A8 0%, #064D3D 100%)",
+                    background: "linear-gradient(145deg, #0E1B2C 0%, #064D3D 100%)",
                     borderRadius: "16px",
                     padding: "40px 30px",
                     color: "#ffffff",
@@ -527,7 +527,7 @@ export default async function ServiceDetailPage({
                         className="btn-default"
                         style={{
                           backgroundColor: "#ffffff",
-                          color: "#1766A8",
+                          color: "#0E1B2C",
                           fontWeight: 700,
                           padding: "12px 28px",
                           display: "inline-block",
@@ -559,7 +559,7 @@ export default async function ServiceDetailPage({
                 <div className="service-entry-content">
                   <span
                     style={{
-                      color: "var(--brand-blue, #438DD5)",
+                      color: "var(--brand-blue, #0E1B2C)",
                       fontSize: "13px",
                       fontWeight: 700,
                       textTransform: "uppercase",
@@ -573,7 +573,7 @@ export default async function ServiceDetailPage({
                       fontSize: "32px",
                       fontWeight: 700,
                       margin: "10px 0 20px",
-                      color: "var(--primary-color, #1766A8)",
+                      color: "var(--primary-color, #0E1B2C)",
                     }}
                   >
                     {detail.title}
@@ -614,7 +614,7 @@ export default async function ServiceDetailPage({
                               style={{
                                 fontSize: "18px",
                                 fontWeight: 700,
-                                color: "var(--primary-color, #1766A8)",
+                                color: "var(--primary-color, #0E1B2C)",
                                 marginBottom: "8px",
                               }}
                             >
@@ -671,10 +671,10 @@ export default async function ServiceDetailPage({
                     style={{
                       background: "linear-gradient(145deg, #f0f6fc 0%, #ffffff 100%)",
                       borderRadius: "16px",
-                      border: "1.5px solid rgba(67, 141, 213, 0.3)",
+                      border: "1.5px solid rgba(14, 27, 44, 0.15)",
                     }}
                   >
-                    <h4 style={{ fontSize: "22px", fontWeight: 700, color: "#1766A8", marginBottom: "12px" }}>
+                    <h4 style={{ fontSize: "22px", fontWeight: 700, color: "#0E1B2C", marginBottom: "12px" }}>
                       Ready to Fortify Your Enterprise?
                     </h4>
                     <p style={{ color: "#697386", maxWidth: "540px", margin: "0 auto 24px" }}>

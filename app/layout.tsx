@@ -5,7 +5,6 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import MagicCursor from "@/components/common/MagicCursor";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { COMPANY } from "@/lib/company-data";
 
@@ -102,7 +101,6 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
         <link href="/css/animate.css" rel="stylesheet" />
         <link rel="stylesheet" href="/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/css/mousecursor.css" />
         <link href="/css/custom.css" rel="stylesheet" media="screen" />
         <script
           type="application/ld+json"
@@ -125,7 +123,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <MagicCursor />
       </body>
     </html>
   );
