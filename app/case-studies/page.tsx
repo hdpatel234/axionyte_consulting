@@ -55,11 +55,12 @@ export default function CaseStudiesPage() {
               </div>
 
               <div
-                className="p-5 rounded text-center my-4"
+                className="p-4 p-md-5 rounded text-center my-4"
                 style={{
-                  background: "rgba(255, 255, 255, 0.02)",
-                  border: "1px dashed rgba(255, 255, 255, 0.2)",
+                  background: "linear-gradient(145deg, #ffffff 0%, #f7fafc 100%)",
+                  border: "1.5px solid rgba(14, 27, 44, 0.1)",
                   borderRadius: "16px",
+                  boxShadow: "0 8px 30px rgba(14, 27, 44, 0.05)",
                 }}
               >
                 <div
@@ -68,21 +69,47 @@ export default function CaseStudiesPage() {
                     width: "80px",
                     height: "80px",
                     borderRadius: "50%",
-                    background: "rgba(46, 204, 113, 0.1)",
-                    border: "1px solid rgba(46, 204, 113, 0.4)",
+                    background: "rgba(7, 134, 95, 0.1)",
+                    border: "1.5px solid rgba(7, 134, 95, 0.25)",
+                    boxShadow: "0 4px 12px rgba(7, 134, 95, 0.12)",
                   }}
                 >
-                  <img src="/images/icon-about-item-2.svg" alt="Security Shield" style={{ width: "40px" }} />
+                  <img
+                    src="/images/axionyte-shield.png"
+                    alt="AXIONYTE Security Shield"
+                    style={{ width: "46px", height: "auto", objectFit: "contain" }}
+                  />
                 </div>
-                <h3 className="text-white mb-3">Sanitized Case Studies Available Upon Request</h3>
-                <p className="text-muted mb-4" style={{ maxWidth: "640px", margin: "0 auto", lineHeight: "1.7" }}>
+                <h3
+                  style={{
+                    color: "var(--color-primary, #0E1B2C)",
+                    fontSize: "24px",
+                    fontWeight: 700,
+                    marginBottom: "14px",
+                  }}
+                >
+                  Sanitized Case Studies Available Upon Request
+                </h3>
+                <p
+                  style={{
+                    color: "var(--color-text-secondary, #697386)",
+                    maxWidth: "640px",
+                    margin: "0 auto 24px",
+                    lineHeight: "1.7",
+                    fontSize: "15px",
+                  }}
+                >
                   We are pleased to provide sanitized case studies and methodology walkthroughs to prospective clients following an initial discovery consultation and standard mutual NDA.
                 </p>
                 <div className="d-flex justify-content-center gap-3 flex-wrap">
                   <Link href="/contact" className="btn-default">
                     Request Methodology Overview
                   </Link>
-                  <a href={COMPANY.phoneLink} className="btn-default btn-outline" style={{ border: "1px solid rgba(255,255,255,0.2)" }}>
+                  <a
+                    href={COMPANY.phoneLink}
+                    className="btn-default btn-hero-secondary"
+                    style={{ border: "1.5px solid rgba(14, 27, 44, 0.2)" }}
+                  >
                     Call {COMPANY.phone}
                   </a>
                 </div>
