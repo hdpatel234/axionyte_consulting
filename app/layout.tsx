@@ -18,14 +18,15 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://axionyte-consulting.vercel.app"),
   title: {
-    default: "AXIONYTE Consulting | Cybersecurity & AI Services",
+    default: "AXIONYTE Consulting | Cybersecurity, AI & ESG Services",
     template: "%s | AXIONYTE Consulting",
   },
   description:
-    "AXIONYTE Consulting helps organizations strengthen digital security, adopt intelligent technologies, and build resilient business operations through cybersecurity and AI-focused solutions.",
+    "AXIONYTE Consulting helps organizations strengthen digital security, adopt intelligent technologies, and build resilient, sustainable business operations through cybersecurity, AI, and ESG-focused solutions.",
   keywords: [
     "Cybersecurity Consulting",
     "AI Services",
+    "ESG Services",
     "Security Assessment",
     "Risk and Compliance Advisory",
     "AI Automation",

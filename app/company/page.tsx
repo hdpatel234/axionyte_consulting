@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHeader from "@/components/common/PageHeader";
 import IndustriesWeServe from "@/components/common/IndustriesWeServe";
 import OurEsteemedPartners from "@/components/common/OurEsteemedPartners";
-import { COMPANY } from "@/lib/company-data";
+import { COMPANY, SITE_CONFIG } from "@/lib/company-data";
 
 export const metadata: Metadata = {
   title: "Company | AXIONYTE Consulting",
   description:
-    "Learn about AXIONYTE Consulting, our corporate profile, mission, vision, and strategic approach to delivering cybersecurity and AI advisory services.",
+    "Learn about AXIONYTE Consulting, our corporate profile, mission, vision, and strategic approach to delivering cybersecurity, AI, and ESG advisory services.",
 };
 
 export default function CompanyPage() {
@@ -80,7 +81,7 @@ export default function CompanyPage() {
                   >
                     Guiding Organizations at the Intersection of{" "}
                     <span style={{ color: "var(--color-secondary, #07865F)" }}>
-                      Cybersecurity &amp; AI
+                      Cybersecurity, AI &amp; ESG
                     </span>
                   </h2>
 
@@ -93,9 +94,9 @@ export default function CompanyPage() {
                       marginBottom: "16px",
                     }}
                   >
-                    <strong>{COMPANY.name}</strong> is an Ahmedabad-based specialized consulting practice
-                    dedicated to helping modern organizations navigate digital risk, fortify critical infrastructure,
-                    and adopt intelligent technologies with confidence.
+                    <strong>{COMPANY.name}</strong> is a specialized consulting advisory
+                    dedicated to helping modern organizations strengthen cybersecurity posture, embrace secure
+                    artificial intelligence, and advance environmental, social, and governance objectives.
                   </p>
                   <p
                     className="wow fadeInUp"
@@ -107,89 +108,94 @@ export default function CompanyPage() {
                     }}
                   >
                     In an increasingly connected global landscape, securing enterprise assets requires more than static defenses;
-                    it demands adaptive strategy, continuous vulnerability management, and responsible artificial intelligence integration.
-                    Our advisory services empower decision-makers with the clarity and technical rigor required to safeguard their operations.
+                    it demands adaptive strategy, continuous vulnerability management, and responsible technology integration.
+                    Our advisory services empower decision-makers with the clarity and technical rigor required to safeguard their operations and achieve sustainable growth.
                   </p>
 
-                  {/* Executive Leadership Block */}
+                  {/* Dual Business Presence: Our Presence */}
                   <div
-                    className="about-owner-card wow fadeInUp mt-4 pt-2"
-                    data-wow-delay="0.25s"
+                    className="our-presence-box wow fadeInUp mt-4"
+                    data-wow-delay="0.3s"
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18px",
-                      padding: "18px 24px",
                       background: "linear-gradient(145deg, #ffffff 0%, #f7fafc 100%)",
-                      border: "1.5px solid rgba(14, 27, 44, 0.1)",
+                      border: "1.5px solid rgba(14, 27, 44, 0.08)",
                       borderLeft: "4px solid var(--color-secondary, #07865F)",
                       borderRadius: "14px",
+                      padding: "20px 24px",
                       boxShadow: "0 6px 20px rgba(14, 27, 44, 0.04)",
                     }}
                   >
-                    <div
-                      style={{
-                        width: "52px",
-                        height: "52px",
-                        borderRadius: "12px",
-                        background: "rgba(7, 134, 95, 0.08)",
-                        border: "1.5px solid rgba(7, 134, 95, 0.25)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "var(--color-secondary, #07865F)",
-                        fontSize: "22px",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <i className="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          fontWeight: 700,
-                          color: "var(--color-secondary, #07865F)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.8px",
-                          display: "inline-block",
-                          marginBottom: "2px",
-                        }}
-                      >
-                        Executive Leadership
-                      </span>
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      <i
+                        className="fa-solid fa-map-location-dot"
+                        style={{ color: "var(--color-secondary, #07865F)", fontSize: "17px" }}
+                      ></i>
                       <h4
                         style={{
-                          margin: "0 0 2px 0",
-                          fontSize: "19px",
-                          fontWeight: 700,
-                          color: "var(--color-primary, #0E1B2C)",
-                          lineHeight: "1.3",
-                        }}
-                      >
-                        {COMPANY.owner}
-                      </h4>
-                      <p
-                        style={{
                           margin: 0,
-                          fontSize: "13.5px",
-                          fontWeight: 600,
+                          fontSize: "15px",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.8px",
                           color: "var(--color-secondary, #07865F)",
-                          letterSpacing: "0.2px",
                         }}
                       >
-                        {COMPANY.role}, {COMPANY.name}
-                      </p>
-                      <p
+                        Our Presence
+                      </h4>
+                    </div>
+                    <p
+                      style={{
+                        margin: "0 0 14px 0",
+                        fontSize: "14px",
+                        lineHeight: "1.6",
+                        color: "var(--color-text-secondary, #697386)",
+                      }}
+                    >
+                      Serving organizations through our presence in Ahmedabad and Mumbai.
+                    </p>
+                    <div className="d-flex flex-wrap gap-3">
+                      <div
+                        className="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill"
                         style={{
-                          margin: "6px 0 0 0",
-                          fontSize: "13px",
-                          color: "var(--color-text-secondary, #697386)",
-                          lineHeight: "1.6",
+                          background: "rgba(14, 27, 44, 0.05)",
+                          border: "1px solid rgba(14, 27, 44, 0.12)",
                         }}
                       >
-                        Leading strategic direction, enterprise cybersecurity consultations, and AI service integration at {COMPANY.name}.
-                      </p>
+                        <i
+                          className="fa-solid fa-location-dot"
+                          style={{ color: "var(--color-primary, #0E1B2C)", fontSize: "14px" }}
+                        ></i>
+                        <span
+                          style={{
+                            fontSize: "13.5px",
+                            fontWeight: 600,
+                            color: "var(--color-primary, #0E1B2C)",
+                          }}
+                        >
+                          Ahmedabad, Gujarat
+                        </span>
+                      </div>
+                      <div
+                        className="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill"
+                        style={{
+                          background: "rgba(7, 134, 95, 0.08)",
+                          border: "1px solid rgba(7, 134, 95, 0.2)",
+                        }}
+                      >
+                        <i
+                          className="fa-solid fa-location-dot"
+                          style={{ color: "var(--color-secondary, #07865F)", fontSize: "14px" }}
+                        ></i>
+                        <span
+                          style={{
+                            fontSize: "13.5px",
+                            fontWeight: 600,
+                            color: "var(--color-secondary, #07865F)",
+                          }}
+                        >
+                          Mumbai, Maharashtra
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -458,11 +464,136 @@ export default function CompanyPage() {
         </div>
       </div>
 
+      {/* Section 4: Our Features (from Main Theme, matching AXIONYTE's Cybersecurity, AI & ESG positioning) */}
+      <div className="our-features" style={{ backgroundColor: "#ffffff" }}>
+        <div className="container">
+          <div className="row section-row">
+            <div className="col-lg-12">
+              <div className="section-title section-title-center text-center">
+                <h3 className="wow fadeInUp">Our Features</h3>
+                <h2 className="text-anime-style-2" data-cursor="-opaque">
+                  Intelligent Capabilities Designed{" "}
+                  <span style={{ color: "var(--color-secondary, #07865F)" }}>
+                    for Enterprise Resilience
+                  </span>
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="feature-item-box">
+                {/* Feature Item 1 (box-1) */}
+                <div className="feature-item box-1 wow fadeInUp">
+                  <div className="feature-image">
+                    <figure>
+                      <img src="/images/feature-image-1.png" alt="Advanced Threat Defense" />
+                    </figure>
+                  </div>
+                  <div className="feature-item-content">
+                    <h3>Advanced Threat Defense</h3>
+                    <p>
+                      Proactive risk discovery, continuous vulnerability auditing, and robust controls engineered for hybrid environments.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature Item 2 (box-2 with scrolling ticker) */}
+                <div className="feature-item box-2 wow fadeInUp" data-wow-delay="0.2s">
+                  <div className="scrolling-ticker feature-scrolling-ticker">
+                    <div className="scrolling-ticker-box">
+                      <div className="scrolling-content">
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Risk Governance</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Intelligent AI</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />ESG Alignment</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Cyber Defense</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Data Protection</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Cloud Security</span>
+                      </div>
+                      <div className="scrolling-content">
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Risk Governance</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Intelligent AI</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />ESG Alignment</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Cyber Defense</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Data Protection</span>
+                        <span><img src="/images/icon-feature-ticker.svg" alt="" />Cloud Security</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="feature-item-content">
+                    <h3>Strategic Advisory Framework</h3>
+                    <p>
+                      Harmonizing cybersecurity vigilance, secure artificial intelligence adoption, and ESG compliance for sustainable enterprise growth.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature Item 3 (box-3) */}
+                <div className="feature-item box-3 wow fadeInUp" data-wow-delay="0.4s">
+                  <div className="feature-image">
+                    <figure>
+                      <img src="/images/feature-image-2.png" alt="Data Governance &amp; Privacy" />
+                    </figure>
+                  </div>
+                  <div className="feature-item-content">
+                    <h3>Data Governance &amp; Privacy</h3>
+                    <p>
+                      Structuring robust data protections to ensure compliance with privacy regulations and enterprise standards.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature Item 4 (box-4) */}
+                <div className="feature-item box-4 wow fadeInUp" data-wow-delay="0.6s">
+                  <div className="feature-image">
+                    <figure>
+                      <img src="/images/feature-image-3.png" alt="Secure AI &amp; Automation" />
+                    </figure>
+                  </div>
+                  <div className="feature-item-content">
+                    <h3>Secure AI &amp; Automation</h3>
+                    <p>
+                      Assessing model safety, mitigating algorithmic risk, and deploying resilient automated workflows that protect enterprise assets.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature Item 5 (box-5) */}
+                <div className="feature-item box-5 wow fadeInUp" data-wow-delay="0.8s">
+                  <div className="feature-image">
+                    <figure>
+                      <img src="/images/feature-image-4.png" alt="Sustainable Enterprise Resilience" />
+                    </figure>
+                  </div>
+                  <div className="feature-item-content">
+                    <h3>Sustainable Enterprise Resilience</h3>
+                    <p>
+                      Aligning digital infrastructure resilience with environmental, social, and governance objectives for enduring business impact.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-12">
+              <div className="section-footer-text wow fadeInUp text-center" data-wow-delay="0.8s">
+                <p>
+                  <span>Advisory</span> Protecting what matters most &ndash;{" "}
+                  <Link href="/contact">Connect with our team to safeguard your future!</Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Section 5: Industries We Serve – Moving Band */}
       <IndustriesWeServe />
 
-      {/* Section 6: Our Partners */}
-      <OurEsteemedPartners />
+      {/* Section 6: Our Partners (Conditionally rendered via centralized configuration) */}
+      {SITE_CONFIG.showPartnerships && <OurEsteemedPartners />}
     </>
   );
 }

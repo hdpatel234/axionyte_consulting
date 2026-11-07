@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMPANY, SHOW_SERVICES } from "@/lib/company-data";
+import { COMPANY, SITE_CONFIG } from "@/lib/company-data";
 
 export default function Footer() {
   return (
@@ -33,8 +33,8 @@ export default function Footer() {
               </div>
               <div className="about-footer-content">
                 <p className="footer-company-desc">
-                  Strategic Cybersecurity and AI advisory services empowering modern enterprises
-                  to fortify resilience, satisfy compliance, and embrace intelligent technology securely.
+                  Strategic Cybersecurity, AI, and ESG advisory services empowering modern enterprises
+                  to fortify digital resilience, embrace intelligent technology, and achieve sustainable growth.
                 </p>
                 <div className="footer-brand-badge">
                   <span className="badge-dot"></span>
@@ -53,16 +53,22 @@ export default function Footer() {
                   <Link href="/">Home</Link>
                 </li>
                 <li>
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li>
                   <Link href="/company">Company</Link>
                 </li>
-                {SHOW_SERVICES && (
+                <li>
+                  <Link href="/service">Service</Link>
+                </li>
+                <li>
+                  <Link href="/case-studies">Case Study</Link>
+                </li>
+                {SITE_CONFIG.showPartnerships && (
                   <li>
-                    <Link href="/service">Service</Link>
+                    <Link href="/partnerships">Partnerships</Link>
                   </li>
                 )}
-                <li>
-                  <Link href="/partnerships">Partnerships</Link>
-                </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
                 </li>

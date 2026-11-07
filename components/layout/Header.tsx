@@ -92,7 +92,7 @@ export default function Header() {
                           : pathname.startsWith(item.href);
                       return (
                         <li
-                          key={item.href}
+                          key={item.label}
                           className={`nav-item ${isActive ? "active" : ""}`}
                         >
                           <Link className="nav-link" href={item.href}>
@@ -143,7 +143,7 @@ export default function Header() {
               <div className="slicknav_menu">
                 <ul className="slicknav_nav" role="menu">
                   {NAV_LINKS.map((item) => (
-                    <li key={`mobile-${item.href}`}>
+                    <li key={`mobile-${item.label}`}>
                       <Link
                         href={item.href}
                         role="menuitem"

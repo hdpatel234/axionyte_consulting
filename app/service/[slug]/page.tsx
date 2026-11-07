@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import PageHeader from "@/components/common/PageHeader";
 import PartnersTicker from "@/components/common/PartnersTicker";
-import { COMPANY, CORE_SERVICES } from "@/lib/company-data";
+import { COMPANY, CORE_SERVICES, SITE_CONFIG } from "@/lib/company-data";
 
 // Combined dictionary of all services & solutions
 const ALL_SERVICE_DETAILS: Record<
@@ -379,6 +379,166 @@ const ALL_SERVICE_DETAILS: Record<
     image: "/images/solution-grc.jpg",
     icon: "/images/icon-service-item-3.svg",
   },
+  "digital-security-awareness": {
+    title: "Digital Security Awareness",
+    subtitle: "Human Risk Reduction & Security Culture",
+    tagline: "Culture of Vigilance",
+    description:
+      "Empowering workforce culture with proactive cyber hygiene, threat recognition training, and human risk reduction programs.",
+    overview: [
+      "Human error and social engineering remain among the highest attack vectors for modern organizations.",
+      "AXIONYTE Consulting designs engaging, measurable security awareness programs that transform your workforce from a vulnerability into your strongest line of defense.",
+    ],
+    features: [
+      {
+        title: "Social Engineering Simulations",
+        desc: "Controlled phishing, spear-phishing, and credential-harvesting simulations to benchmark vulnerability.",
+      },
+      {
+        title: "Role-Based Security Training",
+        desc: "Tailored curriculums for executives, finance teams, HR, and developers addressing specific risk surfaces.",
+      },
+      {
+        title: "Continuous Hygiene Metrics",
+        desc: "Transparent reporting dashboards that measure behavioral improvement and reduction in security incidents.",
+      },
+    ],
+    benefits: [
+      "Measurable decline in phishing susceptibility and credential compromises",
+      "Proactive employee incident reporting and faster threat alerting",
+      "Compliance fulfillment for security awareness mandates across ISO and SOC 2",
+    ],
+    image: "/images/case-study-image-2.jpg",
+    icon: "/images/icon-service-item-2.svg",
+  },
+  "technical-upskilling-program": {
+    title: "Technical Upskilling Program",
+    subtitle: "Enterprise Technical Readiness & Capability Building",
+    tagline: "Capability Elevation",
+    description:
+      "Specialized enterprise training and technical readiness sessions designed to elevate internal capabilities in modern security and AI practices.",
+    overview: [
+      "As threat landscapes and AI tools evolve at unprecedented velocity, enterprise engineering and operations teams must continuously level up.",
+      "Our Technical Upskilling Program delivers structured, hands-on knowledge transfer covering secure architecture, cloud defense, and AI integration best practices.",
+    ],
+    features: [
+      {
+        title: "DevSecOps & Secure Coding",
+        desc: "Hands-on workshops embedding security testing and dependency analysis into active CI/CD pipelines.",
+      },
+      {
+        title: "Cloud Architecture Defense",
+        desc: "Upskilling infrastructure teams on zero-trust policies, secret management, and cloud access controls.",
+      },
+      {
+        title: "AI & Automation Literacy",
+        desc: "Equipping engineering teams to implement and govern AI pipelines with security and efficiency.",
+      },
+    ],
+    benefits: [
+      "Internalized security competence reducing reliance on external incident remediation",
+      "Accelerated deployment cycles with built-in security validation",
+      "Enhanced employee retention and technical leadership development",
+    ],
+    image: "/images/case-study-image-3.jpg",
+    icon: "/images/icon-service-item-3.svg",
+  },
+  "secure-ai-consulting": {
+    title: "Secure AI Consulting",
+    subtitle: "Safe, Compliant & Resilient Machine Intelligence",
+    tagline: "Intelligent Enablement",
+    description:
+      "Advisory on ethical, secure, and resilient artificial intelligence adoption, model risk evaluation, and responsible implementation frameworks.",
+    overview: [
+      "Enterprise AI adoption offers tremendous competitive advantages, but requires rigorous safety boundaries, model governance, and reliable architecture.",
+      "AXIONYTE Consulting guides enterprises in safely deploying AI capabilities, mitigating algorithmic drift, securing proprietary IP, and establishing governance.",
+    ],
+    features: [
+      {
+        title: "Secure AI Architecture Design",
+        desc: "Designing sandboxed enterprise LLM architectures, zero-data-retention API endpoints, and private vector database pipelines.",
+      },
+      {
+        title: "AI Risk Governance & Red Teaming",
+        desc: "Testing models against prompt injection, data poisoning, hallucinations, and non-compliance risks.",
+      },
+      {
+        title: "Ethical & Regulatory Alignment",
+        desc: "Structuring governance frameworks aligned with emerging international AI standards and privacy laws.",
+      },
+    ],
+    benefits: [
+      "Confident adoption of AI innovations without intellectual property exposure",
+      "Mathematical and operational validation of model safety",
+      "Compliance readiness for emerging AI regulatory frameworks",
+    ],
+    image: "/images/case-study-image-4.jpg",
+    icon: "/images/icon-service-item-4.svg",
+  },
+  "ai-automation-solution": {
+    title: "AI Automation Solution",
+    subtitle: "High-Velocity Process Orchestration",
+    tagline: "Process Transformation",
+    description:
+      "Engineering intelligent, automated workflows and process architectures that enhance operational velocity while maintaining rigorous data integrity.",
+    overview: [
+      "Automating complex enterprise workflows demands precision, zero tolerance for error, and seamless integration with existing core software.",
+      "AXIONYTE Consulting architects intelligent automations that free strategic talent from administrative bottlenecks while preserving data fidelity.",
+    ],
+    features: [
+      {
+        title: "Workflow Bottleneck Diagnostics",
+        desc: "Process mining and quantitative feasibility analysis identifying high-ROI automation opportunities.",
+      },
+      {
+        title: "Intelligent Pipeline Orchestration",
+        desc: "Connecting disparate legacy and cloud systems through automated, validated data pipelines.",
+      },
+      {
+        title: "Continuous Observability & Monitoring",
+        desc: "Automated telemetry tracking pipeline execution times, error rates, and compliance checkpoints.",
+      },
+    ],
+    benefits: [
+      "Dramatic reduction in operational turnaround times",
+      "Near-zero manual data entry and transcription errors",
+      "Scalable infrastructure capable of handling growing workload surges",
+    ],
+    image: "/images/case-study-image-5.jpg",
+    icon: "/images/icon-service-item-5.svg",
+  },
+  "esg-services": {
+    title: "ESG Services",
+    subtitle: "Sustainable, Responsible & Resilient Operations",
+    tagline: "Sustainable Transformation",
+    description:
+      "Strategic consulting to advance Environmental, Social, and Governance objectives, integrating sustainable practices and responsible digital operations.",
+    overview: [
+      "Sustainable business is resilient business. AXIONYTE Consulting helps organizations align technological operations with Environmental, Social, and Governance (ESG) imperatives.",
+      "From green computing and sustainable infrastructure to ethical AI governance and transparent reporting, we guide companies toward long-term value creation.",
+    ],
+    features: [
+      {
+        title: "Green IT & Cloud Efficiency",
+        desc: "Auditing digital infrastructure workloads to optimize energy consumption and minimize cloud compute carbon footprint.",
+      },
+      {
+        title: "Governance & Ethical Tech Standards",
+        desc: "Establishing rigorous digital governance frameworks promoting data privacy, diversity, and ethical technology usage.",
+      },
+      {
+        title: "ESG Compliance & Disclosure Roadmaps",
+        desc: "Preparing transparent data collection systems and metrics aligned with global ESG reporting standards.",
+      },
+    ],
+    benefits: [
+      "Lower operational energy and cloud infrastructure expenditures",
+      "Enhanced attractiveness to ESG-conscious investors and enterprise clients",
+      "Strengthened corporate stewardship and sustainable brand equity",
+    ],
+    image: "/images/project-solution-image-1.jpg",
+    icon: "/images/icon-how-it-work-3.svg",
+  },
 };
 
 export async function generateStaticParams() {
@@ -408,6 +568,10 @@ export default async function ServiceDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  if (!SITE_CONFIG.showSingleServicePages) {
+    redirect("/contact");
+  }
+
   const { slug } = await params;
   const detail = ALL_SERVICE_DETAILS[slug] || ALL_SERVICE_DETAILS["cybersecurity-consulting"];
 

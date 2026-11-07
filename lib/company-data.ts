@@ -1,6 +1,6 @@
 export const COMPANY = {
   name: "AXIONYTE Consulting",
-  tagline: "Cybersecurity · AI Services",
+  tagline: "Cybersecurity · AI Services · ESG Services",
   owner: "Jaydev Dudhia",
   role: "Owner",
   phone: "+91 75069 28838",
@@ -20,15 +20,55 @@ export const COMPANY = {
     "https://www.google.com/maps/search/?api=1&query=1011+Ratnanjali+Solitair+Prernatirth+Derasar+Road+Ahmedabad+Gujarat+380015",
 };
 
-export const SHOW_BLOGS = false;
-export const SHOW_SERVICES = false;
+/**
+ * Centralized feature visibility and navigation configuration
+ */
+export const SITE_CONFIG = {
+  showCoreStrength: false,
+  showPartnerships: false,
+  showBlogs: false,
+  showSingleServicePages: false, // when false, individual service buttons & single service routes redirect to /contact
+  showPricing: false,
+};
+
+export const SHOW_BLOGS = SITE_CONFIG.showBlogs;
+export const SHOW_SERVICES = true;
+
+/**
+ * Returns service destination URL based on centralized configuration
+ * - When serviceId is omitted, returns "/service" (the services listing page)
+ * - When serviceId is provided, returns "/contact" while individual service detail pages are unfinalized
+ */
+export const getServiceLink = (serviceId?: string): string => {
+  if (!serviceId) {
+    return "/service";
+  }
+  return SITE_CONFIG.showSingleServicePages ? `/service/${serviceId}` : "/contact";
+};
+
+export const COMPANY_LOCATIONS = [
+  {
+    city: "Ahmedabad",
+    state: "Gujarat",
+    display: "Ahmedabad, Gujarat",
+    address: "1011, Ratnanjali Solitair, Prernatirth Derasar Road, S.A.C., Ahmedabad, Gujarat – 380015",
+    isHeadquarters: true,
+  },
+  {
+    city: "Mumbai",
+    state: "Maharashtra",
+    display: "Mumbai, Maharashtra",
+    isHeadquarters: false,
+  },
+];
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Company", href: "/company" },
-  ...(SHOW_SERVICES ? [{ label: "Service", href: "/service" }] : []),
-  { label: "Partnerships", href: "/partnerships" },
-  ...(SHOW_BLOGS ? [{ label: "Blogs", href: "/blogs" }] : []),
+  { label: "Service", href: "/service" },
+  { label: "Case Study", href: "/case-studies" },
+  ...(SITE_CONFIG.showPartnerships ? [{ label: "Partnerships", href: "/partnerships" }] : []),
+  ...(SITE_CONFIG.showBlogs ? [{ label: "Blogs", href: "/blogs" }] : []),
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -139,57 +179,67 @@ export const CORE_SERVICES = [
     icon: "/images/icon-service-item-1.svg",
     bgIcon: "/images/icon-service-item-1-bg.svg",
     image: "/images/case-study-image-1.jpg",
-    link: "/service",
+    link: getServiceLink("cybersecurity-consulting"),
   },
   {
-    id: "security-assessment",
-    title: "Security Assessment",
+    id: "digital-security-awareness",
+    title: "Digital Security Awareness",
     description:
-      "Comprehensive infrastructure, network, and application vulnerability assessments identifying vulnerabilities before adversaries can exploit them.",
+      "Empowering workforce culture with proactive cyber hygiene, threat recognition training, and human risk reduction programs.",
     icon: "/images/icon-service-item-2.svg",
     bgIcon: "/images/icon-service-item-2-bg.svg",
     image: "/images/case-study-image-2.jpg",
-    link: "/service",
+    link: getServiceLink("digital-security-awareness"),
+  },
+  {
+    id: "technical-upskilling-program",
+    title: "Technical Upskilling Program",
+    description:
+      "Specialized enterprise training and technical readiness sessions designed to elevate internal capabilities in modern security and AI practices.",
+    icon: "/images/icon-service-item-3.svg",
+    bgIcon: "/images/icon-service-item-3-bg.svg",
+    image: "/images/case-study-image-3.jpg",
+    link: getServiceLink("technical-upskilling-program"),
   },
   {
     id: "risk-compliance-advisory",
     title: "Risk & Compliance Advisory",
     description:
-      "Guidance to navigate regulatory frameworks, establish robust governance programs, and mitigate operational, financial, and reputational risks.",
-    icon: "/images/icon-service-item-3.svg",
-    bgIcon: "/images/icon-service-item-3-bg.svg",
-    image: "/images/case-study-image-3.jpg",
-    link: "/service",
-  },
-  {
-    id: "ai-consulting",
-    title: "AI Consulting",
-    description:
-      "Advisory on ethical, secure, and impactful artificial intelligence adoption to transform enterprise workflows and drive competitive advantages.",
+      "Guidance to navigate evolving regulatory frameworks, establish robust governance programs, and manage statutory operational risk.",
     icon: "/images/icon-service-item-4.svg",
     bgIcon: "/images/icon-service-item-4-bg.svg",
     image: "/images/case-study-image-4.jpg",
-    link: "/service",
+    link: getServiceLink("risk-compliance-advisory"),
   },
   {
-    id: "ai-automation-solutions",
-    title: "AI Automation Solutions",
+    id: "secure-ai-consulting",
+    title: "Secure AI Consulting",
     description:
-      "Design and implementation of intelligent process automations that enhance operational velocity, eliminate bottlenecks, and ensure data integrity.",
+      "Advisory on ethical, secure, and resilient artificial intelligence adoption, model risk evaluation, and responsible implementation frameworks.",
     icon: "/images/icon-service-item-5.svg",
     bgIcon: "/images/icon-service-item-5-bg.svg",
     image: "/images/case-study-image-5.jpg",
-    link: "/service",
+    link: getServiceLink("secure-ai-consulting"),
   },
   {
-    id: "digital-security-strategy",
-    title: "Digital Security Strategy",
+    id: "ai-automation-solution",
+    title: "AI Automation Solution",
     description:
-      "Roadmapping resilient security paradigms for cloud migrations, hybrid ecosystems, and next-generation enterprise digital transformations.",
+      "Engineering intelligent, automated workflows and process architectures that enhance operational velocity while maintaining rigorous data integrity.",
     icon: "/images/icon-service-item-6.svg",
     bgIcon: "/images/icon-service-item-6-bg.svg",
     image: "/images/case-study-image-6.jpg",
-    link: "/service",
+    link: getServiceLink("ai-automation-solution"),
+  },
+  {
+    id: "esg-services",
+    title: "ESG Services",
+    description:
+      "Strategic consulting to advance Environmental, Social, and Governance objectives, integrating sustainable practices and responsible digital operations.",
+    icon: "/images/icon-how-it-work-3.svg",
+    bgIcon: "/images/icon-how-it-work-3.svg",
+    image: "/images/project-solution-image-1.jpg",
+    link: getServiceLink("esg-services"),
   },
 ];
 
