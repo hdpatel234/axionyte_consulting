@@ -1412,6 +1412,17 @@ footer.main-footer.compact-footer {
   line-height: 1.6;
 }
 
+.contact-address-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.contact-address-link:hover {
+  color: var(--color-secondary, #07865F) !important;
+}
+
 /* Footer Copyright bar */
 footer.main-footer .footer-copyright,
 .footer-copyright {

@@ -93,6 +93,32 @@ export default function Footer() {
                   </div>
                 </li>
                 <li className="footer-contact-item">
+                  <a
+                    href={COMPANY.mapSearchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-contact-icon"
+                    aria-label="View office location on Google Maps"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fa-solid fa-location-dot"></i>
+                  </a>
+                  <div>
+                    <span className="contact-label">Office Address:</span>
+                    <address className="contact-address mb-0">
+                      <a
+                        href={COMPANY.mapSearchUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-address-link"
+                      >
+                        {COMPANY.address.suite}, {COMPANY.address.street},
+                        {COMPANY.address.cityStateZip}, {COMPANY.address.country}
+                      </a>
+                    </address>
+                  </div>
+                </li>
+                <li className="footer-contact-item">
                   <span className="footer-contact-icon">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </span>
@@ -106,18 +132,6 @@ export default function Footer() {
                     >
                       AXIONYTE Consulting
                     </a>
-                  </div>
-                </li>
-                <li className="footer-contact-item">
-                  <span className="footer-contact-icon">
-                    <i className="fa-solid fa-location-dot"></i>
-                  </span>
-                  <div>
-                    <span className="contact-label">Office Address:</span>
-                    <address className="contact-address mb-0">
-                      {COMPANY.address.suite}, {COMPANY.address.street},
-                      {COMPANY.address.cityStateZip}, {COMPANY.address.country}
-                    </address>
                   </div>
                 </li>
               </ul>
