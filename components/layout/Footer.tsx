@@ -94,6 +94,22 @@ export default function Footer() {
                 </li>
                 <li className="footer-contact-item">
                   <span className="footer-contact-icon">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </span>
+                  <div>
+                    <span className="contact-label">LinkedIn:</span>
+                    <a
+                      href={COMPANY.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-value"
+                    >
+                      AXIONYTE Consulting
+                    </a>
+                  </div>
+                </li>
+                <li className="footer-contact-item">
+                  <span className="footer-contact-icon">
                     <i className="fa-solid fa-location-dot"></i>
                   </span>
                   <div>

@@ -18,6 +18,7 @@ export const COMPANY = {
     "https://maps.google.com/maps?q=Ratnanjali+Solitair+Prernatirth+Derasar+Road+Ahmedabad+Gujarat+380015&t=&z=15&ie=UTF8&iwloc=&output=embed",
   mapSearchUrl:
     "https://www.google.com/maps/search/?api=1&query=1011+Ratnanjali+Solitair+Prernatirth+Derasar+Road+Ahmedabad+Gujarat+380015",
+  linkedin: "https://www.linkedin.com/company/axionyte-consulting/",
 };
 
 /**
