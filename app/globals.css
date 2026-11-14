@@ -1368,19 +1368,51 @@ footer.main-footer.compact-footer {
   gap: 12px !important;
 }
 
+.footer-contact-list .footer-contact-icon,
 .footer-contact-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(7, 134, 95, 0.15);
-  border: 1px solid rgba(7, 134, 95, 0.3);
-  color: var(--color-secondary, #07865F);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  flex-shrink: 0;
-  margin-top: 2px;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 8px !important;
+  background: rgba(7, 134, 95, 0.15) !important;
+  border: 1px solid rgba(7, 134, 95, 0.3) !important;
+  color: var(--color-secondary, #07865F) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+  transform: none !important;
+  margin-top: 3px !important;
+  transition: all 0.2s ease !important;
+}
+
+.footer-contact-list .footer-contact-icon i,
+.footer-contact-icon i {
+  color: var(--color-secondary, #07865F) !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-contact-list .footer-contact-icon:hover,
+.footer-contact-icon:hover {
+  background: rgba(7, 134, 95, 0.28) !important;
+  border-color: rgba(7, 134, 95, 0.6) !important;
+  color: var(--color-secondary, #07865F) !important;
+  transform: none !important;
+}
+
+.footer-contact-list .footer-contact-icon:hover i,
+.footer-contact-icon:hover i {
+  color: var(--color-secondary, #07865F) !important;
 }
 
 .contact-label {
@@ -1391,6 +1423,7 @@ footer.main-footer.compact-footer {
   color: #94a3b8;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 .contact-value {

@@ -82,9 +82,13 @@ export default function Footer() {
               <h3>Contact Information</h3>
               <ul className="footer-contact-list">
                 <li className="footer-contact-item">
-                  <span className="footer-contact-icon">
+                  <a
+                    href={COMPANY.phoneLink}
+                    className="footer-contact-icon"
+                    aria-label="Call AXIONYTE Consulting"
+                  >
                     <i className="fa-solid fa-phone"></i>
-                  </span>
+                  </a>
                   <div>
                     <span className="contact-label">Phone:</span>
                     <a href={COMPANY.phoneLink} className="contact-value phone-highlight">
@@ -99,7 +103,6 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="footer-contact-icon"
                     aria-label="View office location on Google Maps"
-                    style={{ textDecoration: "none" }}
                   >
                     <i className="fa-solid fa-location-dot"></i>
                   </a>
@@ -119,9 +122,15 @@ export default function Footer() {
                   </div>
                 </li>
                 <li className="footer-contact-item">
-                  <span className="footer-contact-icon">
+                  <a
+                    href={COMPANY.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-contact-icon"
+                    aria-label="AXIONYTE Consulting LinkedIn"
+                  >
                     <i className="fa-brands fa-linkedin-in"></i>
-                  </span>
+                  </a>
                   <div>
                     <span className="contact-label">LinkedIn:</span>
                     <a
